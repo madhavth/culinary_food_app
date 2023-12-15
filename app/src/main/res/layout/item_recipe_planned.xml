@@ -16,9 +16,9 @@
             android:layout_height="wrap_content">
 
             <TextView
-                app:layout_constraintTop_toTopOf="@id/btn_remove"
-                app:layout_constraintBottom_toBottomOf="@id/btn_remove"
-                android:id="@+id/tv_recipe_meal_name"
+                app:layout_constraintTop_toTopOf="@id/btn_call"
+                app:layout_constraintBottom_toBottomOf="@id/btn_call"
+                android:id="@+id/tv_name_contact"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
@@ -30,7 +30,7 @@
                 />
 
             <ImageButton
-                android:id="@+id/btn_remove"
+                android:id="@+id/btn_call"
                 android:layout_width="60dp"
                 android:layout_height="50dp"
                 android:src="@drawable/ic_remove"
