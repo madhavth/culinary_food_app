@@ -13,7 +13,10 @@ abstract class BaseActivity<T: ViewBinding>: AppCompatActivity() {
         super.onCreate(savedInstanceState, persistentState)
         _binding = setBinding()
         setContentView(binding.root)
+        postOnCreate(savedInstanceState, persistentState)
     }
+    abstract fun postOnCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?)
+
     abstract fun setBinding() : T
 
 }
