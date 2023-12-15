@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginTop="24dp"
+        android:id="@+id/et_title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:inputType="text"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="title"
+            android:imeActionLabel="title"
+            android:ellipsize="end"
+            android:maxLines="1"
+            tools:ignore="KeyboardInaccessibleWidget" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginTop="24dp"
+        android:id="@+id/et_ingredients_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:inputType="text"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_title_layout"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_add_ingredients"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ingredients"
+            android:imeActionLabel="ingredients"
+            android:ellipsize="end"
+            android:maxLines="1"
+            tools:ignore="KeyboardInaccessibleWidget" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginTop="24dp"
+        android:id="@+id/et_cooking_time_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:inputType="text"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_ingredients_layout"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_cooking_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="cooking time"
+            android:imeActionLabel="cooking time"
+            android:ellipsize="end"
+            android:maxLines="1"
+            tools:ignore="KeyboardInaccessibleWidget" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginTop="24dp"
+        android:id="@+id/et_instructions_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:inputType="text"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_cooking_time_layout"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_instructions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="instructions"
+            android:imeActionLabel="instructions"
+            android:minLines="2"
+            android:ellipsize="end"
+            android:maxLines="1"
+            tools:ignore="KeyboardInaccessibleWidget" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
