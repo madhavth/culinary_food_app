@@ -1,6 +1,6 @@
 package com.madhav.culinaryfood.core.data.models
 
-data class RegisterModel(
+data class UserModel(
     val firstName: String,
     val lastName: String,
     val userName: String,
