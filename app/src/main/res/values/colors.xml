@@ -4,4 +4,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="teal_200">#ffffff</color>
     <color name="login_btn_color">#3498db</color>
+    <color name="transparent">#00ffffff</color>
 </resources>

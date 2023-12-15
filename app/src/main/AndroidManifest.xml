@@ -13,6 +13,9 @@
         android:theme="@style/Theme.FoodiePalCulinaryCompanionApp"
         tools:targetApi="31">
         <activity
+            android:name=".features.recipe_details.presentation.page.RecipeDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".features.register.presentation.page.RegisterActivity"
             android:exported="false" />
         <activity
