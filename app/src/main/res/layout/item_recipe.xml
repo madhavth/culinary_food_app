@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Title for the recipe"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:id="@+id/tv_title"
+                app:layout_constraintBottom_toBottomOf="@id/btn_add_to_meal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/guideline80_vertical"
+                app:layout_constraintTop_toTopOf="@id/btn_add_to_meal" />
+
+            <ImageButton
+                app:layout_constraintStart_toStartOf="@id/guideline80_vertical"
+                android:id="@+id/btn_add_to_meal"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_add"
+                android:tooltipText="press to add to meal plan"
+                app:fabSize="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearance="@style/roundedImageViewRounded" />
+
+
+            <TextView
+                android:id="@+id/tv_ingredients"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Ingredients for the recipe"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/tv_title"
+                app:layout_constraintEnd_toEndOf="@id/guideline80_vertical"
+                app:layout_constraintBottom_toTopOf="@id/btn_share"
+                app:layout_constraintTop_toBottomOf="@id/btn_add_to_meal" />
+
+            <TextView
+                android:id="@+id/tv_rating"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Rating: 4.5/5"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/tv_ingredients"
+                app:layout_constraintEnd_toEndOf="@id/guideline80_vertical"
+                app:layout_constraintTop_toBottomOf="@id/tv_ingredients" />
+
+            <TextView
+                android:id="@+id/tv_cooking_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Time to cook: 45mins"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@id/guideline80_vertical"
+                app:layout_constraintStart_toStartOf="@id/tv_rating"
+                app:layout_constraintTop_toBottomOf="@id/tv_rating" />
+
+
+            <ImageButton
+                android:id="@+id/btn_share"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_share"
+                android:tooltipText="press to share recipe"
+                app:fabSize="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintEnd_toEndOf="@id/btn_add_to_meal"
+                app:layout_constraintTop_toBottomOf="@id/btn_add_to_meal"
+                app:layout_constraintStart_toEndOf="@id/guideline80_vertical"
+                app:shapeAppearance="@style/roundedImageViewRounded" />
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline80_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.8"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
