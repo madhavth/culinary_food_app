@@ -3,4 +3,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="teal_200">#ffffff</color>
+    <color name="login_btn_color">#3498db</color>
 </resources>

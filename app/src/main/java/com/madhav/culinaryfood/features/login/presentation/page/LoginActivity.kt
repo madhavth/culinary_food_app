@@ -4,7 +4,7 @@ import android.os.Bundle
 import com.madhav.culinaryfood.core.presentation.page.BaseActivity
 import com.madhav.culinaryfood.databinding.ActivityLoginBinding
 
-class MainActivity : BaseActivity<ActivityLoginBinding>() {
+class LoginActivity : BaseActivity<ActivityLoginBinding>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
