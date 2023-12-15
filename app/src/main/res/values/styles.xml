@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="card_view_item_blog" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/white</item>
+    </style>
+</resources>
