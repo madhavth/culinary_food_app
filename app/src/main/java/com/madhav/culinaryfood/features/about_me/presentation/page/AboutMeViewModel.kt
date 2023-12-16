@@ -26,5 +26,9 @@ class AboutMeViewModel : ViewModel() {
         this.isEditMode = !isEditMode
     }
 
+    suspend fun saveAboutMe(favoriteRecipes: String, philosophy: String) {
+        aboutMeDataStore.saveAboutMe(favoriteRecipes, philosophy)
+    }
+
 
 }

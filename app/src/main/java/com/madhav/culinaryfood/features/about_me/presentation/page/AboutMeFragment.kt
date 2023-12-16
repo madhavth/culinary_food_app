@@ -64,14 +64,27 @@ class AboutMeFragment : Fragment() {
         binding.fabEditDone.setOnClickListener {
             if(viewModel.isEditMode) {
                 binding.fabEditDone.setImageResource(R.drawable.ic_edit)
-                binding.tvFavoriteRecipes.isEnabled = false
-                binding.tvFoodPhilosophy.isEnabled = false
+                binding.tvFavoriteRecipes.isClickable = false
+                binding.tvFavoriteRecipes.isFocusableInTouchMode =false
+                binding.tvFoodPhilosophy.isClickable = false
+                binding.tvFoodPhilosophy.isFocusableInTouchMode = false
             } else {
                 binding.fabEditDone.setImageResource(R.drawable.ic_done)
                 binding.tvFavoriteRecipes.isClickable = true
+                binding.tvFavoriteRecipes.isFocusableInTouchMode = true
                 binding.tvFoodPhilosophy.isClickable = true
+                binding.tvFoodPhilosophy.isFocusableInTouchMode = true
             }
             viewModel.toggleEditMode()
+
+            lifecycleScope.launch {
+                viewModel.saveAboutMe(
+                    binding.tvFavoriteRecipes.text.toString(),
+                    binding.tvFoodPhilosophy.text.toString()
+                )
+                binding.tvFavoriteRecipes.clearFocus()
+                binding.tvFoodPhilosophy.clearFocus()
+            }
         }
     }
 

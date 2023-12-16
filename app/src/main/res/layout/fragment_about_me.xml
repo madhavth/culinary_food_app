@@ -27,6 +27,8 @@
 
         <EditText
             android:id="@+id/tv_name"
+            android:focusableInTouchMode="false"
+            android:clickable="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -47,6 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="12dp"
             android:layout_marginTop="24dp"
+            android:focusableInTouchMode="false"
             android:autofillHints="favorite recipes"
             android:background="@null"
             android:inputType="text"
@@ -73,9 +76,10 @@
                 android:autofillHints="name"
                 android:clickable="false"
                 android:background="@null"
-                android:inputType="text"
+                android:focusableInTouchMode="false"
                 android:padding="12dp"
                 android:textSize="18sp"
+                android:inputType="textCapSentences|textMultiLine"
                 tools:text="Madhav Thapa" />
 
         </androidx.cardview.widget.CardView>
