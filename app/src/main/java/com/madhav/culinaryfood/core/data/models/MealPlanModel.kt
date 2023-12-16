@@ -1,8 +1,10 @@
 package com.madhav.culinaryfood.core.data.models
 
 data class MealPlanModel(
-    val day: Day,
-    val mealPlans: List<RecipeModel>
+    val dateTime: String,
+    val breakfast: String,
+    val lunch: String,
+    val dinner: String
 )
 
 enum class Day(val day: String) {

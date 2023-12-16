@@ -35,6 +35,7 @@
                 app:layout_constraintTop_toTopOf="@id/btn_add_to_meal" />
 
             <ImageButton
+                android:visibility="invisible"
                 android:backgroundTint="#aaffffff"
                 app:layout_constraintStart_toStartOf="@id/guideline80_vertical"
                 android:id="@+id/btn_add_to_meal"

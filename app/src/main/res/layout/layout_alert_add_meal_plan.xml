@@ -1,0 +1,54 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <CalendarView
+            android:id="@+id/modifiedMealPlanCalendarView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <EditText
+            android:id="@+id/modifiedMealPlanBreakfast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:ems="3"
+            android:gravity="start|top"
+            android:hint="What do you want for breakfast?"
+            android:inputType="textMultiLine"/>
+
+        <EditText
+            android:id="@+id/modifiedMealPlanLunch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:background="@null"
+            android:ems="3"
+            android:gravity="start|top"
+            android:hint="What's for lunch?"
+            android:inputType="textMultiLine"/>
+
+        <EditText
+            android:id="@+id/modifiedMealPlanDinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="8dp"
+            android:padding="8dp"
+            android:ems="3"
+            android:gravity="start|top"
+            android:hint="What's for dinner?"
+            android:inputType="textMultiLine"/>
+
+    </LinearLayout>
+</ScrollView>

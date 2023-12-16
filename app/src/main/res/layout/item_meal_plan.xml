@@ -1,36 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="4dp"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp">
 
-    <TextView
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="24dp"
-        android:text="Sunday"
-        android:textStyle="bold"
-        android:id="@+id/register_text"
-        android:textAllCaps="true"
-        android:textSize="24sp"
-        android:textAlignment="center"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:padding="16dp">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_meals_planned_day"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginHorizontal="12dp"
-        android:layout_marginTop="4dp"
-        android:clipToPadding="false"
-        android:padding="12dp"
-        android:scrollbars="vertical"
-        app:layout_constraintTop_toBottomOf="@id/register_text"
-        tools:layout_editor_absoluteX="12dp"
-        tools:listitem="@layout/item_recipe_planned"
-        tools:itemCount="5"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-    />
+        <TextView
+            android:id="@+id/mealPlanItemDate"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center"
+            android:text="Sat\n11/23"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/breakfasts"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.7"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="vertical"
+            android:id="@+id/breakfasts"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/mealPlanItemDate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/mealPlanItemBreakfast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="My Breakfast: "
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/mealPlanItemLunch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="My Lunch: "
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/divider4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/mealPlanItemDinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="My Dinner: "
+                android:textSize="18sp" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
