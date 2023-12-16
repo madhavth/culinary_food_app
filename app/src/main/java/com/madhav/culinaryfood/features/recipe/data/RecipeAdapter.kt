@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.madhav.culinaryfood.core.data.helpers.ShareDataHelper
+import com.madhav.culinaryfood.core.data.models.RatingModel
 import com.madhav.culinaryfood.core.data.models.RecipeModel
 import com.madhav.culinaryfood.databinding.ItemRecipeBinding
 
@@ -24,7 +25,7 @@ class RecipeAdapter(private val myList: List<RecipeModel>, val itemClickedCallBa
             binding.tvTitle.text = recipe.recipeName
             binding.tvCookingTime.text = recipe.cookingTime
             binding.tvIngredients.text = recipe.ingredients
-            binding.tvRating.text = recipe.rating.size.toString()
+            binding.tvRating.text =  "Rating: " + averageRecipe(recipe.rating) + "/5"
 
             binding.btnAddToMeal.setOnClickListener {
 
@@ -37,6 +38,11 @@ class RecipeAdapter(private val myList: List<RecipeModel>, val itemClickedCallBa
 //                ShareDataHelper().sharePlainText(binding.root.context, blog.title + "\n" + blog.description)
 //            }
 //            binding.tvAuthorName.text = blog.authorId
+        }
+
+        private fun averageRecipe(rating: List<RatingModel>): CharSequence {
+            if(rating.isEmpty()) return "0"
+            return rating.map { it.rating }.average().toString()
         }
     }
 
