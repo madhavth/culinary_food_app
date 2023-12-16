@@ -110,7 +110,7 @@
                 android:id="@+id/iv_recipe_image"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:src="@drawable/recipe_default"
+                android:src="@mipmap/recipe_default"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/guideline20_vertical"
