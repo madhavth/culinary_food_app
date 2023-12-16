@@ -15,12 +15,11 @@ class LoginViewModel : ViewModel() {
     private val TAG = "LoginViewModel"
     private val loginDataSource = LoginDataSource()
 
-    suspend fun checkLoginCredentials(userName: String, password: String): Boolean {
-        return loginDataSource.checkIfUserExists(userName, password) != null
+    suspend fun checkLoginCredentials(userName: String, password: String): UserModel? {
+        return loginDataSource.checkIfUserExists(userName, password)
     }
 
     suspend fun registerUser(userModel: UserModel) {
-        loginDataSource.saveCurrentUser(userModel)
         loginDataSource.saveToUserList(userModel)
     }
 
@@ -30,7 +29,7 @@ class LoginViewModel : ViewModel() {
 
     init {
         viewModelScope.launch {
-            if (loginDataSource.isAppLaunch()|| true) {
+            if (loginDataSource.isAppLaunch()) {
                 setOnBoardingData()
             }
         }
@@ -40,6 +39,10 @@ class LoginViewModel : ViewModel() {
         viewModelScope.launch {
             OnBoardingDataHelper().loadUnBoardingData()
         }
+    }
+
+    suspend fun saveCurrentUser(currentUser: UserModel) {
+        loginDataSource.saveCurrentUser(currentUser)
     }
 
 }

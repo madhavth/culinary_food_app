@@ -1,0 +1,103 @@
+{
+  "list": [
+    {
+      "firstName": "Alice",
+      "lastName": "Johnson",
+      "userName": "alice123",
+      "password": "securePwd123",
+      "email": "alice.j@example.com",
+      "mobile": "+1 123-456-7890",
+      "address": "123 Main St, Cityville, USA"
+    },
+    {
+      "firstName": "Madhav",
+      "lastName": "Thapa",
+      "userName": "madhavth",
+      "password": "pass",
+      "email": "madhav.th@gmail.com",
+      "mobile": "+1 123-456-7890",
+      "address": "123 Main St, Cityville, USA"
+    },
+    {
+      "firstName": "Bob",
+      "lastName": "Smith",
+      "userName": "bob_s",
+      "password": "strongPass456",
+      "email": "bob.smith@email.com",
+      "mobile": "+1 987-654-3210",
+      "address": "456 Oak St, Townsville, USA"
+    },
+    {
+      "firstName": "Charlie",
+      "lastName": "Brown",
+      "userName": "charlie84",
+      "password": "safePassword!",
+      "email": "charlie.b@example.com",
+      "mobile": "+1 555-123-4567",
+      "address": "789 Pine St, Villagetown, USA"
+    },
+    {
+      "firstName": "David",
+      "lastName": "Lee",
+      "userName": "david_lee",
+      "password": "secret123",
+      "email": "david.lee@email.com",
+      "mobile": "+1 333-777-9999",
+      "address": "101 Cedar St, Hamletville, USA"
+    },
+    {
+      "firstName": "Eva",
+      "lastName": "Green",
+      "userName": "eva_green",
+      "password": "evaPwd456",
+      "email": "eva.green@example.com",
+      "mobile": "+1 222-444-6666",
+      "address": "202 Maple St, Riverside, USA"
+    },
+    {
+      "firstName": "Frank",
+      "lastName": "Miller",
+      "userName": "frank_m",
+      "password": "frankPass789",
+      "email": "frank.miller@email.com",
+      "mobile": "+1 111-888-2222",
+      "address": "303 Elm St, Suburbia, USA"
+    },
+    {
+      "firstName": "Grace",
+      "lastName": "Taylor",
+      "userName": "grace_t",
+      "password": "gracePwd123!",
+      "email": "grace.taylor@example.com",
+      "mobile": "+1 777-555-1111",
+      "address": "404 Birch St, Countryside, USA"
+    },
+    {
+      "firstName": "Henry",
+      "lastName": "Clark",
+      "userName": "henry_c",
+      "password": "secureHenry789",
+      "email": "henry.clark@email.com",
+      "mobile": "+1 999-111-3333",
+      "address": "505 Walnut St, Mountainside, USA"
+    },
+    {
+      "firstName": "Ivy",
+      "lastName": "Williams",
+      "userName": "ivy_w",
+      "password": "ivyPass123",
+      "email": "ivy.w@email.com",
+      "mobile": "+1 666-222-4444",
+      "address": "606 Pine St, Lakeside, USA"
+    },
+    {
+      "firstName": "Jack",
+      "lastName": "Anderson",
+      "userName": "jack_a",
+      "password": "andersonPwd456",
+      "email": "jack.anderson@example.com",
+      "mobile": "+1 888-444-6666",
+      "address": "707 Oak St, Valleyville, USA"
+    }
+  ]
+}

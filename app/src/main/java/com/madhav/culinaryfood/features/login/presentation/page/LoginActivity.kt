@@ -69,12 +69,13 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private suspend fun loginButtonClicked() {
-        val check = viewModel.checkLoginCredentials(
+        val currentUser = viewModel.checkLoginCredentials(
             binding.etUsername.text.toString(),
             binding.etPassword.text.toString()
         )
-        if (check) {
+        if (currentUser!=null) {
             startActivity(HomeActivity.getIntent(this))
+            viewModel.saveCurrentUser(currentUser)
             finish()
         } else {
             Snackbar.make(binding.root, "Invalid Credentials", Snackbar.LENGTH_SHORT).show()
