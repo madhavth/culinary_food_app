@@ -35,6 +35,25 @@ class HomeActivity : AppCompatActivity() {
             ContactFragment(),
             AboutMeFragment()
         ), this)
+        setTabLayoutWithViewPager()
+        setTabLayoutWithNavBar()
+    }
+
+    private fun setTabLayoutWithNavBar() {
+//        binding.bottomNavBar.selectedItemId =
+//        binding.bottomNavBar.setOnItemSelectedListener {
+//            when (it.itemId) {
+//                R.id.recipe -> binding.viewPager.currentItem = 0
+//                R.id.meal_plan -> binding.viewPager.currentItem = 1
+//                R.id.blog -> binding.viewPager.currentItem = 2
+//                R.id.contact -> binding.viewPager.currentItem = 3
+//                R.id.about_me -> binding.viewPager.currentItem = 4
+//            }
+//            true
+//        }
+    }
+
+    private fun setTabLayoutWithViewPager() {
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
             tab.text = when (position) {
                 0 -> "Recipes"

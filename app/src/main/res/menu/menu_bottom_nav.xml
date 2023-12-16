@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_recipes"
+        android:icon="@drawable/ic_recipe"
+        android:title="Recipes" />
+
+    <item
+        android:icon="@drawable/ic_blog"
+        android:id="@+id/menu_blogs"
+        android:title="Blogs" />
+
+    <item
+        android:icon="@drawable/ic_contact"
+        android:id="@+id/menu_contact"
+        android:title="Contact" />
+</menu>
