@@ -34,7 +34,7 @@
     {
       "recipeName": "Margherita Pizza",
       "ingredients": "Pizza dough, 1 cup tomato sauce, 1 cup fresh mozzarella, fresh basil leaves, olive oil, salt, and pepper",
-      "instructions": "1. Roll out pizza dough. 2. Spread tomato sauce evenly. 3. Add slices of fresh mozzarella. 4. Sprinkle with salt and pepper. 5. Bake until crust is golden. 6. Garnish with fresh basil. 7. Drizzle with olive oil before serving.",
+      "instructions": "1. Roll out pizza dough. \n2. Spread tomato sauce evenly. \n3. Add slices of fresh mozzarella. \n4. Sprinkle with salt and pepper. \n5. Bake until crust is golden. \n6. Garnish with fresh basil. \n7. Drizzle with olive oil before serving.",
       "imageFilePath": "/images/margherita_pizza.jpg",
       "networkImagePath": "https://example.com/images/margherita_pizza.jpg",
       "cookingTime": "15 minutes",
@@ -96,7 +96,7 @@
     {
       "recipeName": "Shrimp Scampi",
       "ingredients": "250g linguine, 200g shrimp, 3 cloves garlic, 1/4 cup white wine, 2 tbsp lemon juice, 1/4 cup chicken broth, red pepper flakes, parsley, salt, and pepper",
-      "instructions": "1. Cook linguine according to package instructions. 2. Sauté shrimp in olive oil until pink. 3. Add minced garlic and red pepper flakes. 4. Pour in white wine, lemon juice, and chicken broth. 5. Simmer until sauce thickens. 6. Toss cooked linguine with shrimp and sauce. 7. Garnish with parsley.",
+      "instructions": "1. Cook linguine according to package instructions.\n 2. Sauté shrimp in olive oil until pink. \n3. Add minced garlic and red pepper flakes. \n4. Pour in white wine, lemon juice, and chicken broth. \n5. Simmer until sauce thickens. \n6. Toss cooked linguine with shrimp and sauce. \n7. Garnish with parsley.",
       "imageFilePath": "/images/shrimp_scampi.jpg",
       "networkImagePath": "https://example.com/images/shrimp_scampi.jpg",
       "cookingTime": "20 minutes",

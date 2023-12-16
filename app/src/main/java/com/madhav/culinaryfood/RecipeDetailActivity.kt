@@ -27,7 +27,7 @@ class RecipeDetailActivity : AppCompatActivity() {
         }
         binding.tvDetailsIngredients.text = recipeModel?.ingredients
         binding.tvDetailsCookingTime.text = recipeModel?.cookingTime
-        binding.tvDetailsInstructions.text = recipeModel?.instructions
+        binding.tvDetailsInstructions.text = recipeModel?.instructions?.split(Regex("\\d\\."))?.joinToString("\n") ?: "- "
     }
 
     companion object {
