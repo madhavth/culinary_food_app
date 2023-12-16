@@ -32,6 +32,7 @@ class AboutMeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        bindViews()
         lifecycleScope.launch {
             viewModel.getCurrentUser().collectLatest {
                 user->
@@ -56,6 +57,21 @@ class AboutMeFragment : Fragment() {
                 binding.tvFavoriteRecipes.setText(aboutMe.favoriteRecipes)
                 binding.tvFoodPhilosophy.setText(aboutMe.aboutMeDescriptionMotivations)
             }
+        }
+    }
+
+    private fun bindViews() {
+        binding.fabEditDone.setOnClickListener {
+            if(viewModel.isEditMode) {
+                binding.fabEditDone.setImageResource(R.drawable.ic_edit)
+                binding.tvFavoriteRecipes.isEnabled = false
+                binding.tvFoodPhilosophy.isEnabled = false
+            } else {
+                binding.fabEditDone.setImageResource(R.drawable.ic_done)
+                binding.tvFavoriteRecipes.isClickable = true
+                binding.tvFoodPhilosophy.isClickable = true
+            }
+            viewModel.toggleEditMode()
         }
     }
 

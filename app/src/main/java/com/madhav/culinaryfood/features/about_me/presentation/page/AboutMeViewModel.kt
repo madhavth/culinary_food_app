@@ -11,6 +11,8 @@ class AboutMeViewModel : ViewModel() {
 
     private val loginDataStore = LoginDataStore()
     private val aboutMeDataStore = AboutMeDataStore()
+    var isEditMode = false
+        private set
 
     suspend fun getCurrentUser(): Flow<UserModel?> {
         return loginDataStore.getUserFlow()
@@ -19,5 +21,10 @@ class AboutMeViewModel : ViewModel() {
     suspend fun getAboutMe(): Flow<AboutMeModel?> {
         return aboutMeDataStore.getCurrentUserAboutMeFlow()
     }
+
+    fun toggleEditMode() {
+        this.isEditMode = !isEditMode
+    }
+
 
 }
