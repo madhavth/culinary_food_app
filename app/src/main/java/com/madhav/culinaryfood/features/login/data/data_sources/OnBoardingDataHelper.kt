@@ -1,5 +1,6 @@
 package com.madhav.culinaryfood.features.login.data.data_sources
 
+import android.widget.Toast
 import androidx.annotation.RawRes
 import com.google.gson.Gson
 import com.madhav.culinaryfood.R
@@ -26,31 +27,56 @@ class OnBoardingDataHelper {
     }
 
     private suspend fun loadUsersList() {
-        val inputStreamReader = readFromFile(R.raw.users)
-        val listOfUsers: List<UserModel> = gson.fromJson(inputStreamReader, UserListModel::class.java)?.list ?: return
+        try {
+            val inputStreamReader = readFromFile(R.raw.users)
+            val listOfUsers: List<UserModel> =
+                gson.fromJson(inputStreamReader, UserListModel::class.java)?.list ?: return
 
-        for (user in listOfUsers) {
-            LoginDataSource().saveToUserList(user)
+            for (user in listOfUsers) {
+                LoginDataSource().saveToUserList(user)
+            }
+        }
+        catch(e: Exception) {
+            e.printStackTrace()
+            Toast.makeText(MyApplication.instance.applicationContext,
+                "Error adding users",
+                Toast.LENGTH_SHORT).show()
         }
     }
 
     private suspend fun loadBlogPosts() {
-        val inputStreamReader = readFromFile(R.raw.blogs)
-        val listOfBlogs: List<BlogModel> = gson.fromJson(inputStreamReader, BlogListModel::class.java)?.list ?: return
+        try {
+            val inputStreamReader = readFromFile(R.raw.blogs)
+            val listOfBlogs: List<BlogModel> =
+                gson.fromJson(inputStreamReader, BlogListModel::class.java)?.list ?: return
 
-        for(blog in listOfBlogs) {
-            BlogDataSource().addBlogPost(blog)
+            for (blog in listOfBlogs) {
+                BlogDataSource().addBlogPost(blog)
+            }
+        }
+        catch(e:Exception) {
+            e.printStackTrace()
+            Toast.makeText(MyApplication.instance.applicationContext,
+                "Error adding blogs",
+                Toast.LENGTH_SHORT).show()
         }
     }
 
     private suspend fun loadRecipes() {
         // read from recipes.json and save to data store
-        val inputStreamReader = readFromFile(R.raw.recipes)
-        val listOfRecipes: List<RecipeModel> = gson.fromJson(inputStreamReader, RecipeListModel::class.java)?.list
-            ?: return
-        // save to data store
-        for(recipe in listOfRecipes) {
-            RecipeDataSource().saveRecipeToList(recipe)
+        try {
+            val inputStreamReader = readFromFile(R.raw.recipes)
+            val listOfRecipes: List<RecipeModel> =
+                gson.fromJson(inputStreamReader, RecipeListModel::class.java)?.list
+                    ?: return
+            // save to data store
+            RecipeDataSource().saveRecipeList(listOfRecipes)
+        }
+        catch(e: Exception) {
+            e.printStackTrace()
+            Toast.makeText(MyApplication.instance.applicationContext,
+                "Error adding recipes",
+                Toast.LENGTH_SHORT).show()
         }
     }
 

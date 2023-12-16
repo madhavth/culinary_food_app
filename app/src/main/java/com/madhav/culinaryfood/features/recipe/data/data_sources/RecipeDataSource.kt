@@ -5,7 +5,6 @@ import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import com.google.gson.Gson
 import com.madhav.culinaryfood.core.data.data_sources.PreferenceDataStore
-import com.madhav.culinaryfood.core.data.data_sources.PreferenceDataStore.loginDataStore
 import com.madhav.culinaryfood.core.data.models.RecipeListModel
 import com.madhav.culinaryfood.core.data.models.RecipeModel
 import kotlinx.coroutines.flow.Flow
@@ -28,7 +27,7 @@ class RecipeDataSource {
     }
 
     suspend fun saveRecipeToList(recipe: RecipeModel) {
-        loginDataStore.edit {
+        recipePreference.edit {
             try {
                 val data: Preferences = recipePreference.data.firstOrNull() ?: return@edit
                 val recipesData = data[RECIPES_LIST]
@@ -50,7 +49,7 @@ class RecipeDataSource {
     }
 
     fun getRecipesListFlow(): Flow<List<RecipeModel>?> {
-        return loginDataStore.data.map {
+        return recipePreference.data.map {
             try {
                 if (it[RECIPES_LIST] == null) return@map null
                 else
