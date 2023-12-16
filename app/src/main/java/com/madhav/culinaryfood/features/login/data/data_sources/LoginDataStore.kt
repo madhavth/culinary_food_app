@@ -1,6 +1,7 @@
 package com.madhav.culinaryfood.features.login.data.data_sources
 
 import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.core.stringSetPreferencesKey
@@ -17,6 +18,7 @@ class LoginDataStore {
     companion object {
         val USER_DATA = stringPreferencesKey("user_data")
         val USERS_LIST_DATA = stringPreferencesKey("users_list_data")
+        val IS_APP_LAUNCH = booleanPreferencesKey("is_app_launch")
     }
 
     private val loginDataStore = PreferenceDataStore.loginDataStore
@@ -102,4 +104,17 @@ class LoginDataStore {
             it.remove(USER_DATA)
         }
     }
+
+    suspend fun isAppLaunch(): Boolean {
+        val isAppLaunch = loginDataStore.data.firstOrNull()?.get(IS_APP_LAUNCH)
+        return if(isAppLaunch == null) {
+            loginDataStore.edit {
+                it[IS_APP_LAUNCH] = true
+            }
+            true
+        } else {
+            false
+        }
+    }
+
 }

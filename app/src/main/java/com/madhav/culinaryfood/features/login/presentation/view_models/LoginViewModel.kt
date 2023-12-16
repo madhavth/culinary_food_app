@@ -1,8 +1,11 @@
 package com.madhav.culinaryfood.features.login.presentation.view_models
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.madhav.culinaryfood.core.data.models.UserModel
 import com.madhav.culinaryfood.features.login.data.data_sources.LoginDataStore
+import com.madhav.culinaryfood.features.login.data.data_sources.OnBoardingDataHelper
+import kotlinx.coroutines.launch
 
 class LoginViewModel : ViewModel() {
     companion object {
@@ -24,4 +27,17 @@ class LoginViewModel : ViewModel() {
     suspend fun isLoggedIn(): Boolean {
         return loginDataStore.isLoggedIn()
     }
+
+    init {
+        viewModelScope.launch {
+            if (loginDataStore.isAppLaunch()) {
+                setOnBoardingData()
+            }
+        }
+    }
+
+    private fun setOnBoardingData() {
+        OnBoardingDataHelper().loadUnBoardingData()
+    }
+
 }
