@@ -2,6 +2,7 @@ package com.madhav.culinaryfood.features.login.presentation.page
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.content.ContextCompat.startActivity
@@ -48,7 +49,8 @@ class LoginActivity : AppCompatActivity() {
         binding.etPassword.addTextChangedListener {
             checkLoginButtonEnabled()
         }
-        binding.btnLogin.isEnabled = false
+
+        checkLoginButtonEnabled()
     }
 
     private fun checkLoginButtonEnabled() {
