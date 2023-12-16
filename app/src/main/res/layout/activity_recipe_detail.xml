@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".features.recipe_details.presentation.page.RecipeDetailActivity">
+    tools:context=".RecipeDetailActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -17,6 +17,7 @@
             android:layout_height="200dp"
             app:layout_constraintTop_toTopOf="parent"
             tools:src="@drawable/culinary_logo"
+            android:src="@drawable/culinary_logo"
             />
 
 
@@ -109,6 +110,5 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </ScrollView>

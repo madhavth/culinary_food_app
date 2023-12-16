@@ -107,6 +107,27 @@
             tools:ignore="KeyboardInaccessibleWidget" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <Button
+        app:layout_constraintTop_toBottomOf="@id/et_instructions_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="12dp"
+        android:layout_marginTop="12dp"
+        android:text="Cancel"
+        android:backgroundTint="#ff0000"
+        android:id="@+id/btn_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        app:layout_constraintTop_toBottomOf="@id/et_instructions_layout"
+        app:layout_constraintEnd_toStartOf="@id/btn_cancel"
+        android:layout_marginEnd="12dp"
+        android:layout_marginTop="12dp"
+        android:text="Add"
+        android:id="@+id/btn_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

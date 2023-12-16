@@ -5,15 +5,31 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.madhav.culinaryfood.core.data.helpers.ShareDataHelper
 import com.madhav.culinaryfood.core.data.models.RecipeModel
 import com.madhav.culinaryfood.databinding.ItemRecipeBinding
 
-class RecipeAdapter(private val myList: List<RecipeModel>): ListAdapter<RecipeModel, RecipeAdapter.RecipeViewHolder>(
+class RecipeAdapter(private val myList: List<RecipeModel>, val itemClickedCallBack: (RecipeModel)-> Unit): ListAdapter<RecipeModel, RecipeAdapter.RecipeViewHolder>(
     RecipeModelDiffCallBack()
 ) {
 
     inner class RecipeViewHolder(private val binding: ItemRecipeBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(blog: RecipeModel) {
+        fun bind(recipe: RecipeModel) {
+            binding.btnShare.setOnClickListener {
+                ShareDataHelper().sharePlainText(binding.root.context, recipe.recipeName + "\n" + recipe.ingredients + "\n" + recipe.instructions)
+            }
+            binding.root.setOnClickListener {
+                itemClickedCallBack(recipe)
+            }
+            binding.tvTitle.text = recipe.recipeName
+            binding.tvCookingTime.text = recipe.cookingTime
+            binding.tvIngredients.text = recipe.ingredients
+            binding.tvRating.text = recipe.rating.size.toString()
+
+            binding.btnAddToMeal.setOnClickListener {
+
+            }
+
 //            binding.tvTitleBlog.text = blog.title
 //            binding.tvDatePosted.text = blog.postedDate
 //            binding.tvDescriptions.text = blog.description

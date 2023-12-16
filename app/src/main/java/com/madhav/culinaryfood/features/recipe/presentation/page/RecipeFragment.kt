@@ -8,11 +8,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.madhav.culinaryfood.R
+import com.madhav.culinaryfood.RecipeDetailActivity
 import com.madhav.culinaryfood.databinding.FragmentRecipeBinding
 import com.madhav.culinaryfood.features.recipe.data.RecipeAdapter
 import com.madhav.culinaryfood.features.recipe.presentation.view_models.RecipeViewModel
-import kotlinx.coroutines.flow.collect
+import com.madhav.culinaryfood.features.recipe.presentation.views.AddRecipeDialogFragment
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
@@ -35,7 +35,10 @@ class RecipeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.rvRecipe.adapter = RecipeAdapter(listOf())
+        binding.rvRecipe.adapter = RecipeAdapter(listOf()) {
+            recipeModel ->
+             startActivity(RecipeDetailActivity.getIntent(requireContext(), recipeModel))
+        }
         binding.rvRecipe.layoutManager = LinearLayoutManager(
             context,
             LinearLayoutManager.VERTICAL,
@@ -45,6 +48,13 @@ class RecipeFragment : Fragment() {
             viewModel.getRecipesListFlow().collectLatest {
                 (binding.rvRecipe.adapter as RecipeAdapter).submitList(it)
             }
+        }
+        binding.fabAdd.setOnClickListener {
+            AddRecipeDialogFragment {
+                lifecycleScope.launch {
+                    viewModel.addRecipeToList(it)
+                }
+            }.show(childFragmentManager, "AddRecipeDialogFragment")
         }
     }
 

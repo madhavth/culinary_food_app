@@ -1,5 +1,9 @@
 package com.madhav.culinaryfood.core.data.models
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class RecipeModel(
     val recipeName: String,
     val ingredients: String,
@@ -9,4 +13,4 @@ data class RecipeModel(
     val cookingTime: String,
     val rating: List<RatingModel>,
     val recipeId: String
-)
+): Parcelable
