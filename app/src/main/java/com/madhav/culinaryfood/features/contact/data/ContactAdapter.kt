@@ -15,9 +15,9 @@ class ContactAdapter(val emailClickedCallBack: (String)-> Unit) :
     inner class ContactViewHolder(val binding: ItemContactChefBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(contactInfoModel: ContactInfoModel) {
-            binding.tvEmailContact.text = contactInfoModel.contactEmail
-            binding.tvNameContact.text = contactInfoModel.contactName
-            binding.tvPhoneContact.text = contactInfoModel.contactPhone
+            binding.tvEmailContact.text = "Email: " + contactInfoModel.contactEmail
+            binding.tvNameContact.text = "Name: " + contactInfoModel.contactName
+            binding.tvPhoneContact.text = "Phone: " + contactInfoModel.contactPhone
             binding.btnShare.setOnClickListener {
                 ShareDataHelper().sharePlainText(
                     binding.root.context,

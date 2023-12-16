@@ -18,6 +18,7 @@
             <TextView
                 android:id="@+id/tv_name_contact"
                 android:layout_width="0dp"
+                android:textStyle="bold"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
                 android:textSize="16sp"
