@@ -2,21 +2,24 @@ package com.madhav.culinaryfood
 
 import android.app.Activity
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.tabs.TabLayoutMediator
 import com.madhav.culinaryfood.databinding.ActivityHomeBinding
 import com.madhav.culinaryfood.features.about_me.presentation.page.AboutMeFragment
 import com.madhav.culinaryfood.features.blog.presentation.page.BlogFragment
 import com.madhav.culinaryfood.features.contact.presentation.page.ContactFragment
+import com.madhav.culinaryfood.features.home.presentation.view_models.HomeViewModel
 import com.madhav.culinaryfood.features.home.presentation.views.HomeViewPagerAdapter
-import com.madhav.culinaryfood.features.login.presentation.page.LoginActivity
 import com.madhav.culinaryfood.features.meal_planner.presentation.page.MealPlannerFragment
 import com.madhav.culinaryfood.features.recipe.presentation.page.RecipeFragment
 
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding
+    private val viewModel by viewModels<HomeViewModel>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
@@ -39,7 +42,7 @@ class HomeActivity : AppCompatActivity() {
                 2 -> "Blogs"
                 3 -> "Contact"
                 4 -> "About Me"
-                else -> throw IllegalStateException("Invalid position $position")
+                else -> "Other $position"
             }
         }.attach()
     }
@@ -49,4 +52,6 @@ class HomeActivity : AppCompatActivity() {
             return Intent(activity, HomeActivity::class.java)
         }
     }
+
+
 }
