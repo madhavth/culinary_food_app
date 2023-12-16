@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.madhav.culinaryfood.core.data.helpers.ShareDataHelper
 import com.madhav.culinaryfood.core.data.models.BlogModel
 import com.madhav.culinaryfood.databinding.ItemBlogBinding
 
@@ -12,7 +13,12 @@ class BlogRecyclerAdapter(private val myList: List<BlogModel>): ListAdapter<Blog
 
     inner class BlogViewHolder(private val binding: ItemBlogBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(blog: BlogModel) {
-
+            binding.tvTitleBlog.text = blog.title
+            binding.tvDatePosted.text = blog.postedDate
+            binding.tvDescriptions.text = blog.description
+            binding.btnShare.setOnClickListener {
+                ShareDataHelper().sharePlainText(binding.root.context, blog.title + "\n" + blog.description)
+            }
         }
     }
 

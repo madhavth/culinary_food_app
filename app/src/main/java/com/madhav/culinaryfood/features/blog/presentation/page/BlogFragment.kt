@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.madhav.culinaryfood.core.presentation.views.AddBlogAlertDialogFragment
 import com.madhav.culinaryfood.databinding.FragmentBlogBinding
 import com.madhav.culinaryfood.features.blog.data.BlogRecyclerAdapter
@@ -39,6 +40,7 @@ class BlogFragment : Fragment() {
 
     private fun bindViews() {
         binding.rvBlogs.adapter = BlogRecyclerAdapter(listOf())
+        binding.rvBlogs.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, true)
         binding.fabAdd.setOnClickListener {
             val dialog = AddBlogAlertDialogFragment { blog ->
                 lifecycleScope.launch {

@@ -11,7 +11,9 @@ import java.util.Locale
 class DateTimeHelper {
     fun getCurrentDateTime(): String {
         val c: Date = Calendar.getInstance().time
-        val df = SimpleDateFormat("dd-MMM-yyyy", Locale.getDefault())
+
+        //add minutes, hours and seconds to the date
+        val df = SimpleDateFormat("dd-MMM-yyyy HH:mm:ss", Locale.getDefault())
         return df.format(c)
     }
 }
