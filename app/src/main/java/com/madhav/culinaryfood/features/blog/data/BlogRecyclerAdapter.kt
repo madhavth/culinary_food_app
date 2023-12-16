@@ -19,6 +19,7 @@ class BlogRecyclerAdapter(private val myList: List<BlogModel>): ListAdapter<Blog
             binding.btnShare.setOnClickListener {
                 ShareDataHelper().sharePlainText(binding.root.context, blog.title + "\n" + blog.description)
             }
+            binding.tvAuthorName.text = blog.authorId
         }
     }
 
