@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.lifecycleScope
-import com.madhav.culinaryfood.core.data.helpers.DateTimeHelper
+import com.madhav.culinaryfood.core.data.helpers.FormattingHelper
 import com.madhav.culinaryfood.core.data.models.BlogModel
 import com.madhav.culinaryfood.databinding.LayoutAlertAddBlogBinding
 import com.madhav.culinaryfood.features.login.data.data_sources.LoginDataSource
@@ -37,7 +37,7 @@ class AddBlogAlertDialogFragment(val addedCallback: (BlogModel)-> Unit) : Dialog
                 addedCallback(BlogModel(
                     binding.etTitle.text.toString(),
                     binding.etDescriptions.text.toString(),
-                    DateTimeHelper().getCurrentDateTime(),
+                    FormattingHelper().getCurrentDateTime(),
                     currentUser?.userName ?: "",
                     currentUser?.firstName ?: "",
                     blogId = System.currentTimeMillis().toString()

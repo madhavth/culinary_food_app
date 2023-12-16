@@ -6,6 +6,7 @@ import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import com.google.gson.Gson
 import com.madhav.culinaryfood.core.data.data_sources.PreferenceDataStore
+import com.madhav.culinaryfood.core.data.models.ContactInfoModel
 import com.madhav.culinaryfood.core.data.models.UserListModel
 import com.madhav.culinaryfood.core.data.models.UserModel
 import kotlinx.coroutines.flow.Flow
@@ -113,6 +114,19 @@ class LoginDataSource {
             true
         } else {
             false
+        }
+    }
+
+    fun getUsersList(): Flow<List<UserModel>?> {
+        return loginDataStore.data.map {
+            try {
+                if (it[USERS_LIST_DATA] == null) return@map null
+                else
+                    return@map Gson().fromJson(it[USERS_LIST_DATA], UserListModel::class.java)?.list
+            } catch (e: Exception) {
+                e.printStackTrace()
+                return@map null
+            }
         }
     }
 

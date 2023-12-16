@@ -40,6 +40,7 @@ class HomeActivity : AppCompatActivity() {
         )
         setTabLayoutWithViewPager()
         setTabLayoutWithNavBar()
+        binding.viewPager.currentItem = 3
     }
 
     private fun setTabLayoutWithNavBar() {

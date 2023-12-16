@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -62,12 +62,14 @@
                 android:layout_height="50dp"
                 android:src="@drawable/ic_phone"
                 android:tooltipText="press to call"
+                android:background="@drawable/circle"
                 app:fabSize="normal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toEndOf="@id/guideline80_vertical"
                 app:layout_constraintTop_toTopOf="parent"
-                app:shapeAppearance="@style/roundedImageViewRounded" />
+                app:shapeAppearance="@style/roundedImageViewRounded"
+                app:tint="#00ff00" />
 
             <ImageButton
                 android:id="@+id/btn_share"
@@ -75,18 +77,21 @@
                 android:layout_height="50dp"
                 android:src="@drawable/ic_share"
                 android:tooltipText="press to share"
+                android:background="@drawable/circle"
                 app:fabSize="normal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toEndOf="@id/guideline80_vertical"
                 app:layout_constraintTop_toBottomOf="@id/btn_call"
-                app:shapeAppearance="@style/roundedImageViewRounded" />
+                app:shapeAppearance="@style/roundedImageViewRounded"
+                app:tint="#0000ff" />
 
             <ImageButton
                 android:id="@+id/btn_email"
                 android:layout_width="60dp"
                 android:layout_height="50dp"
                 android:src="@drawable/ic_email"
+                android:background="@drawable/circle"
                 android:tooltipText="press to send email"
                 app:fabSize="normal"
                 app:layout_constraintEnd_toEndOf="parent"

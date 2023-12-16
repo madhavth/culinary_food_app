@@ -8,7 +8,7 @@ import java.util.Locale
 
 
 
-class DateTimeHelper {
+class FormattingHelper {
     fun getCurrentDateTime(): String {
         val c: Date = Calendar.getInstance().time
 
