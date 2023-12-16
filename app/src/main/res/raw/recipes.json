@@ -3,7 +3,7 @@
     {
       "recipeName": "Vegetarian Stir Fry",
       "ingredients": "200g tofu, 1 bell pepper, 1 broccoli head, 1 carrot, 2 tbsp soy sauce, 1 tbsp sesame oil, 1 tsp ginger, 2 cloves garlic, 200g rice noodles",
-      "instructions": "1. Press tofu to remove excess water and cut into cubes. 2. Stir-fry tofu until golden. 3. Add sliced bell pepper, broccoli, and julienne-cut carrot. 4. Mix soy sauce, sesame oil, ginger, and garlic. 5. Pour the sauce over the vegetables. 6. Cook rice noodles and toss with the stir-fry. 7. Serve hot.",
+      "instructions": "1. Press tofu to remove excess water and cut into cubes.\n2. Stir-fry tofu until golden.\n3. Add sliced bell pepper, broccoli, and julienne-cut carrot.\n4. Mix soy sauce, sesame oil, ginger, and garlic.\n5. Pour the sauce over the vegetables.\n6. Cook rice noodles and toss with the stir-fry.\n7. Serve hot.",
       "imageFilePath": "/images/vegetarian_stir_fry.jpg",
       "networkImagePath": "https://example.com/images/vegetarian_stir_fry.jpg",
       "cookingTime": "20 minutes",
@@ -34,7 +34,7 @@
     {
       "recipeName": "Margherita Pizza",
       "ingredients": "Pizza dough, 1 cup tomato sauce, 1 cup fresh mozzarella, fresh basil leaves, olive oil, salt, and pepper",
-      "instructions": "1. Roll out pizza dough. \n2. Spread tomato sauce evenly. \n3. Add slices of fresh mozzarella. \n4. Sprinkle with salt and pepper. \n5. Bake until crust is golden. \n6. Garnish with fresh basil. \n7. Drizzle with olive oil before serving.",
+      "instructions": "1. Roll out pizza dough.\n2. Spread tomato sauce evenly.\n3. Add slices of fresh mozzarella.\n4. Sprinkle with salt and pepper.\n5. Bake until crust is golden.\n6. Garnish with fresh basil.\n7. Drizzle with olive oil before serving.",
       "imageFilePath": "/images/margherita_pizza.jpg",
       "networkImagePath": "https://example.com/images/margherita_pizza.jpg",
       "cookingTime": "15 minutes",
@@ -65,7 +65,7 @@
     {
       "recipeName": "Quinoa Salad",
       "ingredients": "1 cup quinoa, cherry tomatoes, cucumber, red onion, feta cheese, olives, olive oil, lemon juice, salt, and pepper",
-      "instructions": "1. Rinse quinoa and cook according to package instructions. 2. Dice tomatoes, cucumber, and red onion. 3. Mix quinoa with veggies, feta, and olives. 4. In a separate bowl, whisk olive oil, lemon juice, salt, and pepper. 5. Pour the dressing over the salad. 6. Toss and refrigerate before serving.",
+      "instructions": "1. Rinse quinoa and cook according to package instructions.\n2. Dice tomatoes, cucumber, and red onion.\n3. Mix quinoa with veggies, feta, and olives.\n4. In a separate bowl, whisk olive oil, lemon juice, salt, and pepper.\n5. Pour the dressing over the salad.\n6. Toss and refrigerate before serving.",
       "imageFilePath": "/images/quinoa_salad.jpg",
       "networkImagePath": "https://example.com/images/quinoa_salad.jpg",
       "cookingTime": "25 minutes",
@@ -96,7 +96,7 @@
     {
       "recipeName": "Shrimp Scampi",
       "ingredients": "250g linguine, 200g shrimp, 3 cloves garlic, 1/4 cup white wine, 2 tbsp lemon juice, 1/4 cup chicken broth, red pepper flakes, parsley, salt, and pepper",
-      "instructions": "1. Cook linguine according to package instructions.\n 2. Sauté shrimp in olive oil until pink. \n3. Add minced garlic and red pepper flakes. \n4. Pour in white wine, lemon juice, and chicken broth. \n5. Simmer until sauce thickens. \n6. Toss cooked linguine with shrimp and sauce. \n7. Garnish with parsley.",
+      "instructions": "1. Cook linguine according to package instructions.\n2. Sauté shrimp in olive oil until pink.\n3. Add minced garlic and red pepper flakes.\n4. Pour in white wine, lemon juice, and chicken broth.\n5. Simmer until sauce thickens.\n6. Toss cooked linguine with shrimp and sauce.\n7. Garnish with parsley.",
       "imageFilePath": "/images/shrimp_scampi.jpg",
       "networkImagePath": "https://example.com/images/shrimp_scampi.jpg",
       "cookingTime": "20 minutes",
@@ -127,7 +127,7 @@
     {
       "recipeName": "Chocolate Chip Cookies",
       "ingredients": "2 1/4 cups all-purpose flour, 1/2 teaspoon baking soda, 1 cup unsalted butter, 1/2 cup granulated sugar, 1 cup packed brown sugar, 1 teaspoon salt, 2 teaspoons vanilla extract, 2 large eggs, 2 cups chocolate chips",
-      "instructions": "1. Preheat oven to 375°F. 2. In a bowl, whisk flour and baking soda. 3. In another bowl, beat butter, granulated sugar, brown sugar, salt, and vanilla. 4. Add eggs one at a time, beating well. 5. Gradually add the flour mixture. 6. Stir in chocolate chips. 7. Drop rounded tablespoons onto baking sheets. 8. Bake for 10-12 minutes.",
+      "instructions": "1. Preheat oven to 375°F.\n2. In a bowl, whisk flour and baking soda.\n3. In another bowl, beat butter, granulated sugar, brown sugar, salt, and vanilla.\n4. Add eggs one at a time, beating well.\n5. Gradually add the flour mixture.\n6. Stir in chocolate chips.\n7. Drop rounded tablespoons onto baking sheets.\n8. Bake for 10-12 minutes.",
       "imageFilePath": "/images/chocolate_chip_cookies.jpg",
       "networkImagePath": "https://example.com/images/chocolate_chip_cookies.jpg",
       "cookingTime": "12 minutes",
@@ -158,7 +158,7 @@
     {
       "recipeName": "Beef Tacos",
       "ingredients": "1 lb ground beef, taco seasoning, taco shells, shredded lettuce, diced tomatoes, shredded cheese, salsa, sour cream",
-      "instructions": "1. Cook ground beef until browned. 2. Add taco seasoning and water as per package instructions. 3. Heat taco shells in the oven. 4. Assemble tacos with beef, lettuce, tomatoes, cheese, salsa, and sour cream. 5. Serve hot.",
+      "instructions": "1. Cook ground beef until browned.\n2. Add taco seasoning and water as per package instructions.\n3. Heat taco shells in the oven.\n4. Assemble tacos with beef, lettuce, tomatoes, cheese, salsa, and sour cream.\n5. Serve hot.",
       "imageFilePath": "/images/beef_tacos.jpg",
       "networkImagePath": "https://example.com/images/beef_tacos.jpg",
       "cookingTime": "15 minutes",
@@ -189,7 +189,7 @@
     {
       "recipeName": "Caprese Salad",
       "ingredients": "Tomatoes, fresh mozzarella, fresh basil leaves, balsamic glaze, olive oil, salt, and pepper",
-      "instructions": "1. Slice tomatoes and fresh mozzarella. 2. Arrange on a plate, alternating with fresh basil leaves. 3. Drizzle with balsamic glaze and olive oil. 4. Sprinkle with salt and pepper. 5. Serve as a refreshing salad or appetizer.",
+      "instructions": "1. Slice tomatoes and fresh mozzarella.\n2. Arrange on a plate, alternating with fresh basil leaves.\n3. Drizzle with balsamic glaze and olive oil.\n4. Sprinkle with salt and pepper.\n5. Serve as a refreshing salad or appetizer.",
       "imageFilePath": "/images/caprese_salad.jpg",
       "networkImagePath": "https://example.com/images/caprese_salad.jpg",
       "cookingTime": "10 minutes",
@@ -220,7 +220,7 @@
     {
       "recipeName": "Mushroom Risotto",
       "ingredients": "1 cup Arborio rice, 1/2 cup white wine, 4 cups chicken or vegetable broth, 1 cup mushrooms, 1/2 cup grated Parmesan cheese, 1/4 cup butter, 1 onion, 2 cloves garlic, salt, and pepper",
-      "instructions": "1. Sauté finely chopped onion and garlic in butter. 2. Add sliced mushrooms and cook until tender. 3. Stir in Arborio rice and cook until lightly toasted. 4. Pour in white wine and cook until mostly absorbed. 5. Add broth gradually, stirring until absorbed. 6. Finish with Parmesan, salt, and pepper. 7. Serve hot.",
+      "instructions": "1. Sauté finely chopped onion and garlic in butter.\n2. Add sliced mushrooms and cook until tender.\n3. Stir in Arborio rice and cook until lightly toasted.\n4. Pour in white wine and cook until mostly absorbed.\n5. Add broth gradually, stirring until absorbed.\n6. Finish with Parmesan, salt, and pepper.\n7. Serve hot.",
       "imageFilePath": "/images/mushroom_risotto.jpg",
       "networkImagePath": "https://example.com/images/mushroom_risotto.jpg",
       "cookingTime": "30 minutes",
@@ -251,7 +251,7 @@
     {
       "recipeName": "Blueberry Pancakes",
       "ingredients": "1 cup all-purpose flour, 1 tbsp sugar, 1 tsp baking powder, 1/2 tsp baking soda, 1/4 tsp salt, 1 cup buttermilk, 1 egg, 2 tbsp melted butter, blueberries",
-      "instructions": "1. In a bowl, whisk together flour, sugar, baking powder, baking soda, and salt. 2. In another bowl, mix buttermilk, egg, and melted butter. 3. Pour wet ingredients into dry and stir until just combined. 4. Fold in blueberries. 5. Cook on a griddle until bubbles form, then flip and cook until golden brown. 6. Serve with maple syrup.",
+      "instructions": "1. In a bowl, whisk together flour, sugar, baking powder, baking soda, and salt.\n2. In another bowl, mix buttermilk, egg, and melted butter.\n3. Pour wet ingredients into dry and stir until just combined.\n4. Fold in blueberries.\n5. Cook on a griddle until bubbles form, then flip and cook until golden brown.\n6. Serve with maple syrup.",
       "imageFilePath": "/images/blueberry_pancakes.jpg",
       "networkImagePath": "https://example.com/images/blueberry_pancakes.jpg",
       "cookingTime": "15 minutes",
@@ -282,7 +282,7 @@
     {
       "recipeName": "Greek Salad",
       "ingredients": "Tomatoes, cucumber, red onion, Kalamata olives, feta cheese, olive oil, red wine vinegar, oregano, salt, and pepper",
-      "instructions": "1. Dice tomatoes, cucumber, red onion, and feta cheese. 2. Slice Kalamata olives. 3. In a bowl, combine vegetables and olives. 4. Drizzle with olive oil and red wine vinegar. 5. Sprinkle with oregano, salt, and pepper. 6. Toss and refrigerate before serving.",
+      "instructions": "1. Dice tomatoes, cucumber, red onion, and feta cheese.\n2. Slice Kalamata olives.\n3. In a bowl, combine vegetables and olives.\n4. Drizzle with olive oil and red wine vinegar.\n5. Sprinkle with oregano, salt, and pepper.\n6. Toss and refrigerate before serving.",
       "imageFilePath": "/images/greek_salad.jpg",
       "networkImagePath": "https://example.com/images/greek_salad.jpg",
       "cookingTime": "15 minutes",

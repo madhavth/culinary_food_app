@@ -21,4 +21,15 @@ class ShareDataHelper {
             Toast.makeText(context, "Error occurred while sharing data", Toast.LENGTH_SHORT).show()
         }
     }
+
+    fun call(context: Context?, contactPhone: String) {
+        try {
+              val intent = Intent(Intent.ACTION_DIAL)
+                intent.data = android.net.Uri.parse("tel:$contactPhone")
+                context?.startActivity(intent)
+        }
+        catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
 }
