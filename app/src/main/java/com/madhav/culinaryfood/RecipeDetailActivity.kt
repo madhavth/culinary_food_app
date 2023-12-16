@@ -7,6 +7,7 @@ import android.os.Bundle
 import com.madhav.culinaryfood.core.data.helpers.ShareDataHelper
 import com.madhav.culinaryfood.core.data.models.RecipeModel
 import com.madhav.culinaryfood.databinding.ActivityRecipeDetailBinding
+import com.madhav.culinaryfood.features.recipe_details.data.CommentAdapter
 
 class RecipeDetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRecipeDetailBinding
@@ -20,14 +21,21 @@ class RecipeDetailActivity : AppCompatActivity() {
     }
 
     private fun bindViews() {
-        if(recipeModel == null) return
+        if (recipeModel == null) return
         binding.title.text = recipeModel?.recipeName
         binding.btnShare.setOnClickListener {
-            ShareDataHelper().sharePlainText(this, recipeModel?.recipeName + "\n" + recipeModel?.ingredients + "\n" + recipeModel?.instructions)
+            ShareDataHelper().sharePlainText(
+                this,
+                recipeModel?.recipeName + "\n" + recipeModel?.ingredients + "\n" + recipeModel?.instructions
+            )
         }
         binding.tvDetailsIngredients.text = recipeModel?.ingredients
         binding.tvDetailsCookingTime.text = recipeModel?.cookingTime
         binding.tvDetailsInstructions.text = recipeModel?.instructions
+
+        if (recipeModel?.rating != null) {
+            binding.rvComments.adapter = CommentAdapter(recipeModel?.rating!!)
+        }
     }
 
     companion object {
