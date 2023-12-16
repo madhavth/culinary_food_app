@@ -2,4 +2,6 @@
     <string name="app_name">FoodiePal - Culinary Companion App</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="i_don_t_discriminate_i_love_all_recipes">I don\'t discriminate, I love all recipes!</string>
+    <string name="food_philosophy">My food philosophy is to eat what I like and like what I eat.</string>
 </resources>

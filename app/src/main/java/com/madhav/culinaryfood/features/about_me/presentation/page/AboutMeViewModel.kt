@@ -16,8 +16,8 @@ class AboutMeViewModel : ViewModel() {
         return loginDataStore.getUserFlow()
     }
 
-    suspend fun getAboutMe(): Flow<AboutMeModel?>? {
-        return null
+    suspend fun getAboutMe(): Flow<AboutMeModel?> {
+        return aboutMeDataStore.getCurrentUserAboutMeFlow()
     }
 
 }

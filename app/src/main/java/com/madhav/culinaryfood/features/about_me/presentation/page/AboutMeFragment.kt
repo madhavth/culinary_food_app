@@ -43,6 +43,20 @@ class AboutMeFragment : Fragment() {
                 binding.tvName.setText("${user.firstName} ${user.lastName}".uppercase())
             }
         }
+
+        lifecycleScope.launch {
+            viewModel.getAboutMe().collectLatest {
+                aboutMe->
+                if(aboutMe == null) {
+                    binding.tvFavoriteRecipes.setText(getString(R.string.i_don_t_discriminate_i_love_all_recipes))
+                    binding.tvFoodPhilosophy.setText(getString(R.string.food_philosophy))
+                    return@collectLatest
+                }
+
+                binding.tvFavoriteRecipes.setText(aboutMe.favoriteRecipes)
+                binding.tvFoodPhilosophy.setText(aboutMe.aboutMeDescriptionMotivations)
+            }
+        }
     }
 
 }
