@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.Flow
 class BlogViewModel: ViewModel() {
 
     private val blogDataSource = BlogDataSource()
-    suspend fun geAllBlogs(): Flow<List<BlogModel>?> {
+    suspend fun getAllBlogs(): Flow<List<BlogModel>?> {
         return blogDataSource.getAllBlogs()
     }
     suspend fun addBlog(blog: BlogModel) {

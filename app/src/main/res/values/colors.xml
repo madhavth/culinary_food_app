@@ -5,4 +5,5 @@
     <color name="teal_200">#ffffff</color>
     <color name="login_btn_color">#3498db</color>
     <color name="transparent">#00ffffff</color>
+    <color name="red">#ff0000</color>
 </resources>

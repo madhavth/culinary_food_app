@@ -6,5 +6,5 @@ data class BlogModel(
     val postedDate: String,
     val authorId: String,
     val authorName: String,
-    val blogId: Integer
+    val blogId: String
 )

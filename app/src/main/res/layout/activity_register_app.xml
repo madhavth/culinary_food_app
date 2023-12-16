@@ -144,6 +144,7 @@
                 android:hint="confirm password"
                 android:imeActionLabel="confirm password"
                 android:ellipsize="end"
+                android:inputType="textPassword"
                 android:maxLines="1"
                 tools:ignore="KeyboardInaccessibleWidget" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -216,7 +217,6 @@
                 android:imeActionLabel="confirm password"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:inputType="textPassword"
                 tools:ignore="KeyboardInaccessibleWidget"
                 />
         </com.google.android.material.textfield.TextInputLayout>

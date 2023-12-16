@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.madhav.culinaryfood.core.data.models.BlogModel
 import com.madhav.culinaryfood.databinding.ItemBlogBinding
 
-class BlogRecyclerAdapter(private val list: List<BlogModel>): ListAdapter<BlogModel, BlogRecyclerAdapter.BlogViewHolder>(BlogModelDiffCallBack()) {
+class BlogRecyclerAdapter(private val myList: List<BlogModel>): ListAdapter<BlogModel, BlogRecyclerAdapter.BlogViewHolder>(BlogModelDiffCallBack()) {
 
     inner class BlogViewHolder(private val binding: ItemBlogBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(blog: BlogModel) {
@@ -22,7 +22,8 @@ class BlogRecyclerAdapter(private val list: List<BlogModel>): ListAdapter<BlogMo
     }
 
     override fun onBindViewHolder(holder: BlogViewHolder, position: Int) {
-        holder.bind(list[position])
+        if(currentList.isEmpty() && position >= currentList.size) return
+        holder.bind(currentList[position])
     }
 
 }
