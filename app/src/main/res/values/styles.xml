@@ -4,4 +4,14 @@
     <style name="card_view_item_blog" parent="@android:style/TextAppearance">
         <item name="android:textColor">@color/white</item>
     </style>
+
+    <style name="BottomNavigationTheme" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/white</item>
+<!--        <item name="android:textColorSecondary">@color/</item>-->
+    </style>
+
+    <style name="BoldTheme" parent="Widget.AppCompat.Toolbar">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">24sp</item>
+    </style>
 </resources>

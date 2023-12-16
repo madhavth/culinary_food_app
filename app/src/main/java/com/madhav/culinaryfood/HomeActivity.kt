@@ -66,6 +66,7 @@ class HomeActivity : AppCompatActivity() {
 
         binding.viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
+                binding.toolbar.title = getTitleText(position)
                 when (position) {
                     0 -> binding.bottomNavBar.selectedItemId = R.id.menu_recipes
                     2 -> binding.bottomNavBar.selectedItemId = R.id.menu_blogs
@@ -75,16 +76,37 @@ class HomeActivity : AppCompatActivity() {
         })
     }
 
+    fun getTitleText(position: Int): String {
+        return when (position) {
+            0 -> {
+                "Recipes"
+            }
+
+            1 -> {
+                "Meal Plan"
+            }
+
+            2 -> {
+                "Blogs"
+            }
+
+            3 -> {
+                "Contact"
+            }
+
+            4 -> {
+                "About Me"
+            }
+
+            else -> {
+                "Other $position"
+            }
+        }
+    }
+
     private fun setTabLayoutWithViewPager() {
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
-            tab.text = when (position) {
-                0 -> "Recipes"
-                1 -> "Meal Plan"
-                2 -> "Blogs"
-                3 -> "Contact"
-                4 -> "About Me"
-                else -> "Other $position"
-            }
+            tab.text = getTitleText(position)
         }.attach()
     }
 
