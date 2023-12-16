@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayoutMediator
 import com.madhav.culinaryfood.databinding.ActivityHomeBinding
 import com.madhav.culinaryfood.features.about_me.presentation.page.AboutMeFragment
@@ -28,29 +29,49 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun bindViews() {
-        binding.viewPager.adapter = HomeViewPagerAdapter(listOf(
-            RecipeFragment(),
-            MealPlannerFragment(),
-            BlogFragment(),
-            ContactFragment(),
-            AboutMeFragment()
-        ), this)
+        binding.viewPager.adapter = HomeViewPagerAdapter(
+            listOf(
+                RecipeFragment(),
+                MealPlannerFragment(),
+                BlogFragment(),
+                ContactFragment(),
+                AboutMeFragment()
+            ), this
+        )
         setTabLayoutWithViewPager()
         setTabLayoutWithNavBar()
     }
 
     private fun setTabLayoutWithNavBar() {
-//        binding.bottomNavBar.selectedItemId =
-//        binding.bottomNavBar.setOnItemSelectedListener {
-//            when (it.itemId) {
-//                R.id.recipe -> binding.viewPager.currentItem = 0
-//                R.id.meal_plan -> binding.viewPager.currentItem = 1
-//                R.id.blog -> binding.viewPager.currentItem = 2
-//                R.id.contact -> binding.viewPager.currentItem = 3
-//                R.id.about_me -> binding.viewPager.currentItem = 4
-//            }
-//            true
-//        }
+        binding.bottomNavBar.setOnNavigationItemSelectedListener {
+            when (it.itemId) {
+                R.id.menu_recipes -> {
+                    binding.viewPager.currentItem = 0
+                    return@setOnNavigationItemSelectedListener true
+                }
+
+                R.id.menu_blogs -> {
+                    binding.viewPager.currentItem = 2
+                    return@setOnNavigationItemSelectedListener true
+                }
+
+                R.id.menu_contact -> {
+                    binding.viewPager.currentItem = 3
+                    return@setOnNavigationItemSelectedListener true
+                }
+            }
+            false
+        }
+
+        binding.viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+                when (position) {
+                    0 -> binding.bottomNavBar.selectedItemId = R.id.menu_recipes
+                    2 -> binding.bottomNavBar.selectedItemId = R.id.menu_blogs
+                    3 -> binding.bottomNavBar.selectedItemId = R.id.menu_contact
+                }
+            }
+        })
     }
 
     private fun setTabLayoutWithViewPager() {
