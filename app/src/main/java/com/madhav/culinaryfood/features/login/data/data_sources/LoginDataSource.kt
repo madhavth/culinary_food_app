@@ -96,7 +96,8 @@ class LoginDataSource {
     }
 
     suspend fun isLoggedIn(): Boolean {
-        return getCurrentUser() != null
+        val preference = loginDataStore.data.firstOrNull()
+        return preference?.get(USER_DATA) != null
     }
 
     suspend fun logout() {

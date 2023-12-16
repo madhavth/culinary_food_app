@@ -40,7 +40,7 @@ class BlogFragment : Fragment() {
 
     private fun bindViews() {
         binding.rvBlogs.adapter = BlogRecyclerAdapter(listOf())
-        binding.rvBlogs.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        binding.rvBlogs.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, true)
         binding.fabAdd.setOnClickListener {
             val dialog = AddBlogAlertDialogFragment { blog ->
                 lifecycleScope.launch {

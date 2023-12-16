@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.bumptech.glide.Glide
 import com.madhav.culinaryfood.core.data.helpers.ShareDataHelper
 import com.madhav.culinaryfood.core.data.models.RecipeModel
 import com.madhav.culinaryfood.databinding.ActivityRecipeDetailBinding
@@ -36,6 +37,13 @@ class RecipeDetailActivity : AppCompatActivity() {
         if (recipeModel?.rating != null) {
             binding.rvComments.adapter = CommentAdapter(recipeModel?.rating!!)
         }
+
+        Glide.with(binding.ivRecipeImage)
+            .load("https://source.unsplash.com/random/400x400/?${recipeModel?.recipeName}")
+            .fallback(R.mipmap.recipe_default)
+            .placeholder(R.mipmap.recipe_default)
+            .into(binding.ivRecipeImage)
+
     }
 
     companion object {

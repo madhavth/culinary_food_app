@@ -7,6 +7,7 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayoutMediator
 import com.madhav.culinaryfood.databinding.ActivityHomeBinding
@@ -18,6 +19,7 @@ import com.madhav.culinaryfood.features.home.presentation.views.HomeViewPagerAda
 import com.madhav.culinaryfood.features.login.presentation.page.LoginActivity
 import com.madhav.culinaryfood.features.meal_planner.presentation.page.MealPlannerFragment
 import com.madhav.culinaryfood.features.recipe.presentation.page.RecipeFragment
+import kotlinx.coroutines.launch
 
 class HomeActivity : AppCompatActivity() {
 
@@ -45,7 +47,9 @@ class HomeActivity : AppCompatActivity() {
         setTabLayoutWithNavBar()
         binding.viewPager.currentItem = 0
         binding.actionLogout.setOnClickListener {
-            logoutPressed()
+            lifecycleScope.launch {
+                logoutPressed()
+            }
         }
     }
 
@@ -127,20 +131,7 @@ class HomeActivity : AppCompatActivity() {
         return true
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when(item.itemId) {
-            R.id.action_logout -> {
-                logoutPressed()
-                true
-            }
-
-            else -> {
-                super.onOptionsItemSelected(item)
-            }
-        }
-    }
-
-    private fun logoutPressed() {
+    private suspend fun logoutPressed() {
         viewModel.logout()
         startActivity(LoginActivity.getIntent(this))
         finish()

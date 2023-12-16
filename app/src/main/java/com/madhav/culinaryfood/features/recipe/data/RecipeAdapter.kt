@@ -5,6 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.madhav.culinaryfood.R
 import com.madhav.culinaryfood.core.data.helpers.ShareDataHelper
 import com.madhav.culinaryfood.core.data.models.RatingModel
 import com.madhav.culinaryfood.core.data.models.RecipeModel
@@ -27,9 +29,13 @@ class RecipeAdapter(private val myList: List<RecipeModel>, val itemClickedCallBa
             binding.tvIngredients.text = recipe.ingredients
             binding.tvRating.text =  "Rating: " + averageRecipe(recipe.rating) + "/5"
 
-            binding.btnAddToMeal.setOnClickListener {
+            Glide.with(binding.ivRecipeImage)
+                .load("https://source.unsplash.com/random/400x400/?${recipe.recipeName}")
+                .fallback(R.mipmap.recipe_default)
+                .placeholder(R.mipmap.recipe_default)
+                .into(binding.ivRecipeImage)
 
-            }
+            binding.btnAddToMeal.setOnClickListener {}
 
 //            binding.tvTitleBlog.text = blog.title
 //            binding.tvDatePosted.text = blog.postedDate

@@ -8,9 +8,7 @@ import kotlinx.coroutines.launch
 class HomeViewModel : ViewModel() {
 
     private val loginDataSource = LoginDataSource()
-    fun logout() {
-        viewModelScope.launch {
-            loginDataSource.logout()
-        }
+    suspend fun logout() {
+        LoginDataSource().logout()
     }
 }
