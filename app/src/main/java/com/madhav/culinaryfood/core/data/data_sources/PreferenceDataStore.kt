@@ -8,15 +8,16 @@ import com.madhav.culinaryfood.features.login.data.data_sources.LoginDataStore
 
 object PreferenceDataStore {
 
-    val loginDataStore = MyApplication.instance.loginDataStore
+    val loginDataStore by lazy { MyApplication.instance.loginDataStore }
 
-    val recipePreferenceDataStore = MyApplication.instance.recipePreferenceDataStore
+    val recipePreferenceDataStore by lazy { MyApplication.instance.recipePreferenceDataStore }
 
-    val mealsPlannedPreferenceDataStore = MyApplication.instance.mealsPlannedPreferenceDataStore
+    val mealsPlannedPreferenceDataStore by lazy { MyApplication.instance.mealsPlannedPreferenceDataStore }
 
-    val aboutMeDataStore = MyApplication.instance.aboutMeDataStore
+    val aboutMeDataStore by lazy { MyApplication.instance.aboutMeDataStore }
 
-    val blogPostsPreferenceDataStore = MyApplication.instance.blogPostsPreferenceDataStore
+    val blogPostsPreferenceDataStore by lazy { MyApplication.instance.blogPostsPreferenceDataStore }
+
 }
 
 
