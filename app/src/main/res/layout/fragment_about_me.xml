@@ -8,83 +8,90 @@
     android:nestedScrollingEnabled="true"
     tools:context=".features.about_me.presentation.page.AboutMeFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/iv_profile_pic"
-            android:layout_width="180dp"
-            android:layout_height="180dp"
-            android:layout_marginTop="36dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:shapeAppearanceOverlay="@style/roundedImageViewRounded"
-            app:strokeColor="@color/black"
-            android:src="@mipmap/me"
-            app:strokeWidth="1dp" />
-
-        <EditText
-            android:id="@+id/tv_name"
-            android:focusableInTouchMode="false"
-            android:clickable="false"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:autofillHints="name"
-            android:background="@null"
-            android:inputType="text"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="@id/iv_profile_pic"
-            app:layout_constraintStart_toStartOf="@id/iv_profile_pic"
-            app:layout_constraintTop_toBottomOf="@id/iv_profile_pic"
-            tools:text="Madhav Thapa" />
-
-
-        <EditText
-            android:clickable="false"
-            android:id="@+id/tv_favorite_recipes"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="12dp"
-            android:layout_marginTop="24dp"
-            android:focusableInTouchMode="false"
-            android:autofillHints="favorite recipes"
-            android:background="@null"
-            android:inputType="text"
-            android:textAlignment="center"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_name"
-            tools:text="Madhav Thapa" />
+            android:layout_height="match_parent"
+            android:nestedScrollingEnabled="true">
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:minHeight="180dp"
-            app:layout_constraintEnd_toEndOf="@id/tv_favorite_recipes"
-            app:layout_constraintStart_toStartOf="@id/tv_favorite_recipes"
-            app:layout_constraintTop_toBottomOf="@id/tv_favorite_recipes">
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_profile_pic"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_marginTop="36dp"
+                android:src="@mipmap/me"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/roundedImageViewRounded"
+                app:strokeColor="@color/black"
+                app:strokeWidth="1dp" />
 
             <EditText
-                android:id="@+id/tv_food_philosophy"
-                android:layout_width="match_parent"
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
                 android:autofillHints="name"
-                android:clickable="false"
                 android:background="@null"
+                android:clickable="false"
                 android:focusableInTouchMode="false"
-                android:padding="12dp"
-                android:textSize="18sp"
-                android:inputType="textCapSentences|textMultiLine"
+                android:inputType="text"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="@id/iv_profile_pic"
+                app:layout_constraintStart_toStartOf="@id/iv_profile_pic"
+                app:layout_constraintTop_toBottomOf="@id/iv_profile_pic"
                 tools:text="Madhav Thapa" />
 
-        </androidx.cardview.widget.CardView>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <EditText
+                android:id="@+id/tv_favorite_recipes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginTop="24dp"
+                android:autofillHints="favorite recipes"
+                android:background="@null"
+                android:clickable="false"
+                android:focusableInTouchMode="false"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:inputType="textCapSentences|textMultiLine"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_name"
+                tools:text="Madhav Thapa" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:minHeight="180dp"
+                android:layout_marginHorizontal="6dp"
+                app:layout_constraintEnd_toEndOf="@id/tv_favorite_recipes"
+                app:layout_constraintStart_toStartOf="@id/tv_favorite_recipes"
+                app:layout_constraintTop_toBottomOf="@id/tv_favorite_recipes">
+
+                <EditText
+                    android:id="@+id/tv_food_philosophy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="name"
+                    android:background="@null"
+                    android:clickable="false"
+                    android:focusableInTouchMode="false"
+                    android:inputType="textCapSentences|textMultiLine"
+                    android:padding="12dp"
+                    android:textSize="18sp"
+                    tools:text="Madhav Thapa" />
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_edit_done"
@@ -93,7 +100,7 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
         android:src="@drawable/ic_edit"
-        app:shapeAppearance="@style/roundedImageViewRounded"
-        app:fabSize="normal" />
+        app:fabSize="normal"
+        app:shapeAppearance="@style/roundedImageViewRounded" />
 
 </FrameLayout>

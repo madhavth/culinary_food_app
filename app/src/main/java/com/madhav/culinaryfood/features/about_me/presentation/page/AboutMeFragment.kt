@@ -62,6 +62,13 @@ class AboutMeFragment : Fragment() {
 
     private fun bindViews() {
         binding.fabEditDone.setOnClickListener {
+            binding.tvFavoriteRecipes.setBackgroundResource(
+                if(!viewModel.isEditMode) androidx.appcompat.R.drawable.abc_edit_text_material else 0
+            )
+            binding.tvFoodPhilosophy.setBackgroundResource(
+                if(!viewModel.isEditMode) androidx.appcompat.R.drawable.abc_edit_text_material else 0
+            )
+
             if(viewModel.isEditMode) {
                 binding.fabEditDone.setImageResource(R.drawable.ic_edit)
                 binding.tvFavoriteRecipes.isClickable = false
