@@ -6,8 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.lifecycleScope
 import com.madhav.culinaryfood.R
 import com.madhav.culinaryfood.databinding.FragmentAboutMeBinding
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 
 class AboutMeFragment : Fragment() {
 
@@ -29,7 +32,17 @@ class AboutMeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        lifecycleScope.launch {
+            viewModel.getCurrentUser().collectLatest {
+                user->
+                if(user == null) {
+                    binding.tvName.setText("No user found")
+                    return@collectLatest
+                }
 
+                binding.tvName.setText("${user.firstName} ${user.lastName}".uppercase())
+            }
+        }
     }
 
 }

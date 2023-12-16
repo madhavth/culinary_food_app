@@ -97,4 +97,9 @@ class LoginDataStore {
         return getCurrentUser() != null
     }
 
+    suspend fun logout() {
+        loginDataStore.edit {
+            it.remove(USER_DATA)
+        }
+    }
 }
