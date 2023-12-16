@@ -217,7 +217,8 @@
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:inputType="textPassword"
-                tools:ignore="KeyboardInaccessibleWidget" />
+                tools:ignore="KeyboardInaccessibleWidget"
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button

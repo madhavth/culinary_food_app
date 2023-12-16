@@ -1,5 +1,6 @@
 package com.madhav.culinaryfood.features.login.presentation.page
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -8,6 +9,7 @@ import androidx.activity.viewModels
 import androidx.core.content.ContextCompat.startActivity
 import androidx.core.widget.addTextChangedListener
 import com.madhav.culinaryfood.HomeActivity
+import com.madhav.culinaryfood.MyCustomSplashScreen
 import com.madhav.culinaryfood.RegisterActivity
 import com.madhav.culinaryfood.databinding.ActivityLoginBinding
 import com.madhav.culinaryfood.features.login.presentation.view_models.LoginViewModel
@@ -29,6 +31,13 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
         bindViews()
+
+        coroutineScope.launch {
+            if (viewModel.isLoggedIn()) {
+                startActivity(HomeActivity.getIntent(this@LoginActivity))
+                finish()
+            }
+        }
     }
 
     private fun bindViews() {
@@ -76,5 +85,11 @@ class LoginActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         coroutineScope.cancel()
+    }
+
+    companion object {
+        fun getIntent(myCustomSplashScreen: MyCustomSplashScreen): Intent {
+            return Intent(myCustomSplashScreen, LoginActivity::class.java)
+        }
     }
 }

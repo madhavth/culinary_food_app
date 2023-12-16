@@ -7,5 +7,5 @@ data class AboutMeModel(
     val email: String,
     val imagePath: String,
     val aboutMeDescriptionMotivations: String,
-    val favoriteRecipes: List<String>,
+    val favoriteRecipes: String
 )

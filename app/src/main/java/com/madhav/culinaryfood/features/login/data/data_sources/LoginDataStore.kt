@@ -3,27 +3,26 @@ package com.madhav.culinaryfood.features.login.data.data_sources
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
+import androidx.datastore.preferences.core.stringSetPreferencesKey
 import com.google.gson.Gson
 import com.madhav.culinaryfood.core.data.data_sources.PreferenceDataStore
-import com.madhav.culinaryfood.core.data.data_sources.PreferenceDataStore.loginDataStore
+import com.madhav.culinaryfood.core.data.models.UserListModel
 import com.madhav.culinaryfood.core.data.models.UserModel
-import com.madhav.culinaryfood.features.login.data.data_sources.LoginDataStore.Companion.USER_DATA
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.toCollection
 
 class LoginDataStore {
 
     companion object {
         val USER_DATA = stringPreferencesKey("user_data")
+        val USERS_LIST_DATA = stringPreferencesKey("users_list_data")
     }
 
     private val loginDataStore = PreferenceDataStore.loginDataStore
 
 
-    suspend fun saveUser(user: UserModel) {
+    suspend fun saveCurrentUser(user: UserModel) {
         loginDataStore.edit {
             Gson().toJson(user).let { userJson ->
                 it[USER_DATA] = userJson
@@ -31,10 +30,49 @@ class LoginDataStore {
         }
     }
 
-    suspend fun getUser(): UserModel? {
+    suspend fun saveToUserList(user: UserModel) {
+        loginDataStore.edit {
+            try {
+                val data: Preferences = loginDataStore.data.firstOrNull() ?: return@edit
+                val userData = data[USERS_LIST_DATA]
+                val userList =
+                    Gson().fromJson(userData, UserListModel::class.java)?.list ?: mutableListOf()
+
+                val listOfUsers = mutableListOf<UserModel>()
+                listOfUsers.addAll(userList)
+                listOfUsers.add(user)
+
+                Gson().toJson(UserListModel(listOfUsers)).let { userJson ->
+                    it[USERS_LIST_DATA] = userJson
+                }
+
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+    }
+
+    suspend fun checkIfUserExists(userName: String, password: String): UserModel? {
         return try {
-            val data: Preferences = loginDataStore.data.firstOrNull() ?: return@getUser null
-            val userData = data[USER_DATA] ?: return@getUser null
+            val data: Preferences = loginDataStore.data.firstOrNull() ?: return null
+            val userData = data[USERS_LIST_DATA] ?: return null
+            val userList = Gson().fromJson(userData, UserListModel::class.java).list
+            for (user in userList) {
+                if (user.userName == userName && user.password == password) {
+                    return user
+                }
+            }
+            return null
+        } catch (e: Exception) {
+            e.printStackTrace()
+            null
+        }
+    }
+
+    suspend fun getCurrentUser(): UserModel? {
+        return try {
+            val data: Preferences = loginDataStore.data.firstOrNull() ?: return null
+            val userData = data[USER_DATA] ?: return null
             return Gson().fromJson(userData, UserModel::class.java)
         } catch (e: Exception) {
             e.printStackTrace()
@@ -48,12 +86,15 @@ class LoginDataStore {
                 if (it[USER_DATA] == null) return@map null
                 else
                     return@map Gson().fromJson(it[USER_DATA], UserModel::class.java)
-            }
-            catch (e: Exception) {
+            } catch (e: Exception) {
                 e.printStackTrace()
                 return@map null
             }
         }
+    }
+
+    suspend fun isLoggedIn(): Boolean {
+        return getCurrentUser() != null
     }
 
 }

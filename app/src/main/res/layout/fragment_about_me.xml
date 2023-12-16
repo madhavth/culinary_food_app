@@ -22,6 +22,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:shapeAppearanceOverlay="@style/roundedImageViewRounded"
             app:strokeColor="@color/black"
+            android:src="@mipmap/me"
             app:strokeWidth="1dp" />
 
         <EditText

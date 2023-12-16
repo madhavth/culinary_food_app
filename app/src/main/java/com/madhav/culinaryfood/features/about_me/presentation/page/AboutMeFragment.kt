@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.madhav.culinaryfood.R
+import com.madhav.culinaryfood.databinding.FragmentAboutMeBinding
 
 class AboutMeFragment : Fragment() {
 
@@ -15,18 +16,20 @@ class AboutMeFragment : Fragment() {
     }
 
     private lateinit var viewModel: AboutMeViewModel
+    private lateinit var binding: FragmentAboutMeBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_about_me, container, false)
+    ): View {
+        viewModel = ViewModelProvider(this)[AboutMeViewModel::class.java]
+        binding = FragmentAboutMeBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(AboutMeViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
     }
 
 }
