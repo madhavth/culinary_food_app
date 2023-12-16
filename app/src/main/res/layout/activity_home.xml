@@ -12,9 +12,22 @@
         android:id="@+id/toolbar"
         app:title="@string/app_name"
         app:titleTextColor="@color/white"
+        tools:title="Test"
         app:titleTextAppearance="@style/BoldTheme"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"/>
+        android:layout_height="?attr/actionBarSize">
+
+
+        <ImageButton
+            android:id="@+id/action_logout"
+            android:layout_gravity="end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_exit"
+            android:backgroundTint="#00000000"
+            />
+
+    </com.google.android.material.appbar.MaterialToolbar>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

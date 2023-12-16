@@ -3,6 +3,8 @@ package com.madhav.culinaryfood
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
@@ -13,6 +15,7 @@ import com.madhav.culinaryfood.features.blog.presentation.page.BlogFragment
 import com.madhav.culinaryfood.features.contact.presentation.page.ContactFragment
 import com.madhav.culinaryfood.features.home.presentation.view_models.HomeViewModel
 import com.madhav.culinaryfood.features.home.presentation.views.HomeViewPagerAdapter
+import com.madhav.culinaryfood.features.login.presentation.page.LoginActivity
 import com.madhav.culinaryfood.features.meal_planner.presentation.page.MealPlannerFragment
 import com.madhav.culinaryfood.features.recipe.presentation.page.RecipeFragment
 
@@ -41,6 +44,9 @@ class HomeActivity : AppCompatActivity() {
         setTabLayoutWithViewPager()
         setTabLayoutWithNavBar()
         binding.viewPager.currentItem = 0
+        binding.actionLogout.setOnClickListener {
+            logoutPressed()
+        }
     }
 
     private fun setTabLayoutWithNavBar() {
@@ -114,6 +120,30 @@ class HomeActivity : AppCompatActivity() {
         fun getIntent(activity: Activity): Intent {
             return Intent(activity, HomeActivity::class.java)
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_home, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when(item.itemId) {
+            R.id.action_logout -> {
+                logoutPressed()
+                true
+            }
+
+            else -> {
+                super.onOptionsItemSelected(item)
+            }
+        }
+    }
+
+    private fun logoutPressed() {
+        viewModel.logout()
+        startActivity(LoginActivity.getIntent(this))
+        finish()
     }
 
 

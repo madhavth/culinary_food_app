@@ -1,5 +1,6 @@
 package com.madhav.culinaryfood.features.login.presentation.page
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -89,8 +90,8 @@ class LoginActivity : AppCompatActivity() {
     }
 
     companion object {
-        fun getIntent(myCustomSplashScreen: MyCustomSplashScreen): Intent {
-            return Intent(myCustomSplashScreen, LoginActivity::class.java)
+        fun getIntent(activity: Activity): Intent {
+            return Intent(activity, LoginActivity::class.java)
         }
     }
 }
