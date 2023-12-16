@@ -19,6 +19,14 @@ class RecipeDataSource {
         val RECIPES_LIST = stringPreferencesKey("recipes_list")
     }
 
+    suspend fun saveRecipeList(list: List<RecipeModel>) {
+        recipePreference.edit {
+            Gson().toJson(RecipeListModel(list)).let { userJson ->
+                it[RECIPES_LIST] = userJson
+            }
+        }
+    }
+
     suspend fun saveRecipeToList(recipe: RecipeModel) {
         loginDataStore.edit {
             try {

@@ -30,14 +30,16 @@ class LoginViewModel : ViewModel() {
 
     init {
         viewModelScope.launch {
-            if (loginDataSource.isAppLaunch()) {
+            if (loginDataSource.isAppLaunch()|| true) {
                 setOnBoardingData()
             }
         }
     }
 
     private fun setOnBoardingData() {
-        OnBoardingDataHelper().loadUnBoardingData()
+        viewModelScope.launch {
+            OnBoardingDataHelper().loadUnBoardingData()
+        }
     }
 
 }

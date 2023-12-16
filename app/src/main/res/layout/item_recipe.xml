@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_marginBottom="12dp"
+    android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -22,13 +23,14 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
+                android:layout_marginStart="6dp"
                 android:maxLines="1"
                 android:text="Title for the recipe"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:id="@+id/tv_title"
                 app:layout_constraintBottom_toBottomOf="@id/btn_add_to_meal"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideline20_vertical"
                 app:layout_constraintEnd_toEndOf="@id/guideline80_vertical"
                 app:layout_constraintTop_toTopOf="@id/btn_add_to_meal" />
 
@@ -50,10 +52,11 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
+                android:layout_marginStart="6dp"
                 android:maxLines="1"
                 tools:text="Ingredients for the recipe"
                 android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideline20_vertical"
                 app:layout_constraintEnd_toEndOf="@id/guideline80_vertical"
                 app:layout_constraintBottom_toTopOf="@id/btn_share"
                 app:layout_constraintTop_toBottomOf="@id/btn_add_to_meal"
@@ -63,13 +66,13 @@
                 android:id="@+id/tv_rating"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="12dp"
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:text="Rating: 4.5/5"
                 android:textSize="14sp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@id/tv_ingredients"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/guideline80_vertical"
                 app:layout_constraintTop_toBottomOf="@id/tv_ingredients" />
 
@@ -101,6 +104,16 @@
                 app:layout_constraintStart_toEndOf="@id/guideline80_vertical"
                 app:shapeAppearance="@style/roundedImageViewRounded" />
 
+            <ImageView
+                android:id="@+id/iv_recipe_image"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:src="@drawable/recipe_default"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guideline20_vertical"
+                app:layout_constraintBottom_toTopOf="@id/tv_rating"
+                />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline80_vertical"
@@ -108,6 +121,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.8"
+                />
+
+<androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline20_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.2"
                 />
 
 

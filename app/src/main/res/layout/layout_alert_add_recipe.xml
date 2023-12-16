@@ -75,7 +75,7 @@
             android:id="@+id/et_cooking_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="cooking time"
+            android:hint="cooking time in minutes"
             android:imeActionLabel="cooking time"
             android:ellipsize="end"
             android:maxLines="1"

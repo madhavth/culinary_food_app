@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.lifecycleScope
+import com.google.android.material.snackbar.Snackbar
 import com.madhav.culinaryfood.core.data.helpers.DateTimeHelper
 import com.madhav.culinaryfood.core.data.models.BlogModel
 import com.madhav.culinaryfood.core.data.models.RecipeModel
@@ -36,6 +37,15 @@ class AddRecipeDialogFragment(val addedCallback: (RecipeModel)-> Unit) :DialogFr
         lifecycleScope.launch {
             val currentUser = LoginDataSource().getCurrentUser()
             binding.btnAdd.setOnClickListener {
+                if(binding.etTitle.text.toString().isBlank() ||
+                    binding.etAddIngredients.text.toString().isBlank() ||
+                    binding.etInstructions.text.toString().isBlank() ||
+                    binding.etCookingTime.text.toString().isBlank()
+                ) {
+                    Snackbar.make(binding.root, "Please fill all the fields", Snackbar.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+
                 addedCallback(
                     RecipeModel(
                         recipeName = binding.etTitle.text.toString(),
@@ -43,7 +53,7 @@ class AddRecipeDialogFragment(val addedCallback: (RecipeModel)-> Unit) :DialogFr
                         instructions = binding.etInstructions.text.toString(),
                         "",
                         "",
-                        binding.etCookingTime.text.toString(),
+                        binding.etCookingTime.text.toString() + " mins to cook",
                         listOf(),
                         recipeId = System.currentTimeMillis().toString(),
                     )
