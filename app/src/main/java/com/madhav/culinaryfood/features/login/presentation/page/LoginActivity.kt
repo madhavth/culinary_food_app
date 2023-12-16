@@ -10,11 +10,18 @@ import com.madhav.culinaryfood.HomeActivity
 import com.madhav.culinaryfood.RegisterActivity
 import com.madhav.culinaryfood.databinding.ActivityLoginBinding
 import com.madhav.culinaryfood.features.login.presentation.view_models.LoginViewModel
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.cancel
+import kotlinx.coroutines.cancelChildren
+import kotlinx.coroutines.launch
 
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
     private val viewModel by viewModels<LoginViewModel>()
+    private val coroutineScope = CoroutineScope(Dispatchers.Main + SupervisorJob())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,7 +32,9 @@ class LoginActivity : AppCompatActivity() {
 
     private fun bindViews() {
         binding.btnLogin.setOnClickListener {
-           loginButtonClicked()
+            coroutineScope.launch {
+                loginButtonClicked()
+            }
         }
 
         binding.btnRegister.setOnClickListener {
@@ -47,12 +56,12 @@ class LoginActivity : AppCompatActivity() {
                 && binding.etPassword.toString().isNotEmpty()
     }
 
-    private fun loginButtonClicked() {
+    private suspend fun loginButtonClicked() {
         val check = viewModel.checkLoginCredentials(
             binding.etUsername.text.toString(),
             binding.etPassword.text.toString()
         )
-        if (!check) {
+        if (check) {
             startActivity(HomeActivity.getIntent(this))
             finish()
         } else {
@@ -60,5 +69,10 @@ class LoginActivity : AppCompatActivity() {
             Toast.makeText(this, "Invalid Credentials", Toast.LENGTH_SHORT).show()
             binding.etPassword.text?.clear()
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        coroutineScope.cancel()
     }
 }

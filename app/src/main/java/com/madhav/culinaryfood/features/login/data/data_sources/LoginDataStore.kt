@@ -1,12 +1,18 @@
 package com.madhav.culinaryfood.features.login.data.data_sources
 
+import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import com.google.gson.Gson
 import com.madhav.culinaryfood.core.data.data_sources.PreferenceDataStore
+import com.madhav.culinaryfood.core.data.data_sources.PreferenceDataStore.loginDataStore
 import com.madhav.culinaryfood.core.data.models.UserModel
+import com.madhav.culinaryfood.features.login.data.data_sources.LoginDataStore.Companion.USER_DATA
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.toCollection
 
 class LoginDataStore {
 
@@ -25,11 +31,11 @@ class LoginDataStore {
         }
     }
 
-    fun getUser(): UserModel? {
+    suspend fun getUser(): UserModel? {
         return try {
-            Gson().fromJson(loginDataStore.data.map {
-                it[USER_DATA]
-            }.toString(), UserModel::class.java)
+            val data: Preferences = loginDataStore.data.firstOrNull() ?: return@getUser null
+            val userData = data[USER_DATA] ?: return@getUser null
+            return Gson().fromJson(userData, UserModel::class.java)
         } catch (e: Exception) {
             e.printStackTrace()
             null
