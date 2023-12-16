@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.content.ContextCompat.startActivity
 import androidx.core.widget.addTextChangedListener
+import com.google.android.material.snackbar.Snackbar
 import com.madhav.culinaryfood.HomeActivity
 import com.madhav.culinaryfood.MyCustomSplashScreen
 import com.madhav.culinaryfood.RegisterActivity
@@ -76,8 +77,7 @@ class LoginActivity : AppCompatActivity() {
             startActivity(HomeActivity.getIntent(this))
             finish()
         } else {
-            // show toast for error
-            Toast.makeText(this, "Invalid Credentials", Toast.LENGTH_SHORT).show()
+            Snackbar.make(binding.root, "Invalid Credentials", Snackbar.LENGTH_SHORT).show()
             binding.etPassword.text?.clear()
         }
     }

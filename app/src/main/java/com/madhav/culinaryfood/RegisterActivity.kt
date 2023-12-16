@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
+import com.google.android.material.snackbar.Snackbar
 import com.madhav.culinaryfood.core.data.models.UserModel
 import com.madhav.culinaryfood.databinding.ActivityRegisterAppBinding
 import com.madhav.culinaryfood.features.login.presentation.page.LoginActivity
@@ -57,12 +58,12 @@ class RegisterActivity : AppCompatActivity() {
             email.isBlank() ||
             phone.isBlank()
             ) {
-            Toast.makeText(this, "Please fill all the fields", Toast.LENGTH_SHORT).show()
+            Snackbar.make(binding.root, "Please fill all the fields", Snackbar.LENGTH_SHORT).show()
             return
         }
 
         if (password != confirmPassword) {
-            Toast.makeText(this, "Password and Confirm Password should be same", Toast.LENGTH_SHORT).show()
+            Snackbar.make(binding.root, "Password and Confirm Password should be same", Snackbar.LENGTH_SHORT).show()
             return
         }
 
@@ -78,7 +79,7 @@ class RegisterActivity : AppCompatActivity() {
 
         coroutineScope.launch {
             loginViewModel.registerUser(userModel)
-            Toast.makeText(this@RegisterActivity, "User Registered Successfully", Toast.LENGTH_SHORT).show()
+            Snackbar.make(binding.root, "User Registered Successfully", Snackbar.LENGTH_SHORT).show()
             finish()
         }
     }
