@@ -9,7 +9,7 @@ import androidx.lifecycle.lifecycleScope
 import com.madhav.culinaryfood.core.data.helpers.DateTimeHelper
 import com.madhav.culinaryfood.core.data.models.BlogModel
 import com.madhav.culinaryfood.databinding.LayoutAlertAddBlogBinding
-import com.madhav.culinaryfood.features.login.data.data_sources.LoginDataStore
+import com.madhav.culinaryfood.features.login.data.data_sources.LoginDataSource
 import kotlinx.coroutines.launch
 
 
@@ -32,7 +32,7 @@ class AddBlogAlertDialogFragment(val addedCallback: (BlogModel)-> Unit) : Dialog
         }
 
         lifecycleScope.launch {
-            val currentUser = LoginDataStore().getCurrentUser()
+            val currentUser = LoginDataSource().getCurrentUser()
             binding.btnAdd.setOnClickListener {
                 addedCallback(BlogModel(
                     binding.etTitle.text.toString(),

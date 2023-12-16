@@ -3,7 +3,7 @@ package com.madhav.culinaryfood.features.login.presentation.view_models
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.madhav.culinaryfood.core.data.models.UserModel
-import com.madhav.culinaryfood.features.login.data.data_sources.LoginDataStore
+import com.madhav.culinaryfood.features.login.data.data_sources.LoginDataSource
 import com.madhav.culinaryfood.features.login.data.data_sources.OnBoardingDataHelper
 import kotlinx.coroutines.launch
 
@@ -13,24 +13,24 @@ class LoginViewModel : ViewModel() {
     }
 
     private val TAG = "LoginViewModel"
-    private val loginDataStore = LoginDataStore()
+    private val loginDataSource = LoginDataSource()
 
     suspend fun checkLoginCredentials(userName: String, password: String): Boolean {
-        return loginDataStore.checkIfUserExists(userName, password) != null
+        return loginDataSource.checkIfUserExists(userName, password) != null
     }
 
     suspend fun registerUser(userModel: UserModel) {
-        loginDataStore.saveCurrentUser(userModel)
-        loginDataStore.saveToUserList(userModel)
+        loginDataSource.saveCurrentUser(userModel)
+        loginDataSource.saveToUserList(userModel)
     }
 
     suspend fun isLoggedIn(): Boolean {
-        return loginDataStore.isLoggedIn()
+        return loginDataSource.isLoggedIn()
     }
 
     init {
         viewModelScope.launch {
-            if (loginDataStore.isAppLaunch()) {
+            if (loginDataSource.isAppLaunch()) {
                 setOnBoardingData()
             }
         }

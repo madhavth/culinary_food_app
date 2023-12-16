@@ -7,7 +7,7 @@ import com.google.gson.Gson
 import com.madhav.culinaryfood.core.data.data_sources.PreferenceDataStore
 import com.madhav.culinaryfood.core.data.models.AboutMeListModel
 import com.madhav.culinaryfood.core.data.models.AboutMeModel
-import com.madhav.culinaryfood.features.login.data.data_sources.LoginDataStore
+import com.madhav.culinaryfood.features.login.data.data_sources.LoginDataSource
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.flow.map
@@ -80,7 +80,7 @@ class AboutMeDataStore {
     }
 
     suspend fun saveAboutMe(favoriteRecipes: String, philosophy: String) {
-        val currentUser = LoginDataStore().getCurrentUser() ?: return
+        val currentUser = LoginDataSource().getCurrentUser() ?: return
         saveCurrentUserAboutMe(AboutMeModel(currentUser.userName, philosophy, favoriteRecipes))
     }
 }

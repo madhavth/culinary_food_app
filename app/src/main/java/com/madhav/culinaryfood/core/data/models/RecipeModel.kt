@@ -7,5 +7,6 @@ data class RecipeModel(
     val imageFilePath: String,
     val networkImagePath: String,
     val cookingTime: String,
-    val rating: List<RatingModel>
+    val rating: List<RatingModel>,
+    val recipeId: String
 )
